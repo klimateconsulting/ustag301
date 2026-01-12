@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.S. TAG to ISO/TC 301 | Energy Management and Energy Savings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 16px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #003366;
+        }
+
+        .logo-text span {
+            color: #0066cc;
+        }
+
+        .header-right {
+            font-size: 14px;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .header-right a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .header-right a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 100px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            opacity: 0.85;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Section styles */
+        section {
+            padding: 80px 48px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0066cc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a2e;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: #6b7280;
+            margin-top: 16px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about-section {
+            background: #f8fafc;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: #e0f2fe;
+            padding: 16px 24px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+            margin: 24px 0;
+        }
+
+        .highlight-box a {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .highlight-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* USTAG Section */
+        .ustag-section {
+            background: white;
+        }
+
+        /* Activities Grid */
+        .activities-section {
+            background: #f8fafc;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+        }
+
+        .activity-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 8px 30px rgba(0,102,204,0.1);
+        }
+
+        .activity-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #003366, #0066cc);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .activity-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+
+        .activity-card p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Standards Section */
+        .standards-section {
+            background: white;
+        }
+
+        .standards-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .standards-content p {
+            font-size: 17px;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .standards-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .standards-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,102,204,0.3);
+        }
+
+        /* Members Section */
+        .members-section {
+            background: #f8fafc;
+        }
+
+        .members-table {
+            max-width: 700px;
+            margin: 0 auto;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .members-table th,
+        .members-table td {
+            padding: 16px 24px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .members-table th {
+            background: #e5e7eb;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1a1a2e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .members-table td {
+            font-size: 15px;
+            color: #4b5563;
+        }
+
+        .members-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .member-name {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .member-role-highlight {
+            background: #e0f2fe;
+            color: #0066cc;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Links Section */
+        .links-section {
+            background: white;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .link-card {
+            display: block;
+            padding: 28px;
+            background: #f8fafc;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .link-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 8px 30px rgba(0,102,204,0.1);
+        }
+
+        .link-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        .link-card p {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #003366;
+            color: white;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .contact-content p {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            padding: 32px;
+            border-radius: 16px;
+            display: inline-block;
+        }
+
+        .contact-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-role {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 16px;
+        }
+
+        .contact-email {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 32px 48px;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        footer .links {
+            margin-top: 12px;
+        }
+
+        footer .links a {
+            margin: 0 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .activities-grid,
+            .links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 24px;
+            }
+
+            .header {
+                padding: 16px 24px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 80px 24px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .activities-grid,
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .members-table th,
+            .members-table td {
+                padding: 12px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo-text">U.S. TAG to <span>ISO/TC 301</span></div>
+        </div>
+        <div class="header-right">
+            Accredited by <a href="https://www.ansi.org" target="_blank">ANSI</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">U.S. Technical Advisory Group</div>
+            <h1>ISO/TC 301</h1>
+            <h2>Energy Management and Energy Savings</h2>
+            <p>The official U.S. Technical Advisory Group (TAG) accredited by the American National Standards Institute (ANSI), representing U.S. positions on international energy management standards developed by ISO.</p>
+        </div>
+    </section>
+
+    <!-- Background Section -->
+    <section class="about-section">
+        <div class="section-header">
+            <div class="section-label">Background</div>
+            <h2 class="section-title">What is the U.S. Technical Advisory Group to ISO TC 301?</h2>
+        </div>
+        <div class="about-content">
+            <p>Strategic Energy Management (SEM) is practiced by many organizations to improve energy performance, save costs, and reduce unwanted emissions. While SEM can take many forms, the international standard for SEM is provided by <strong>ISO 50001:2018 – Energy Management</strong> developed under the procedures of the International Standards Organization (ISO). It is this form of SEM that has international recognition as representing superior management practice.</p>
+            <p class="highlight-box">For examples of SEM implementation, see <a href="https://50001insights.lbl.gov/" target="_blank">Energy Management System Insights</a></p>
+            <p>The ISO operates through Technical Committees (TC) responsible for specific scopes. ISO 50001 is in the scope of <strong>TC 301</strong>, the technical committee responsible for standards on energy management and determining energy savings. In the United States the member organization to the ISO is the American National Standards Institute (ANSI). ANSI accredits Technical Advisory Groups (TAG) for the TCs with scopes of interest to organizations in the U.S. These TAGs develop the position of the U.S. on their respective TC activities and ballot the interim and final approval of relevant documents within a Technical Committee. In the United States, the national inputs to ISO TC 301-Energy Management and Energy Savings is the U.S. TAG to 301 (TAG 301).</p>
+        </div>
+    </section>
+
+    <!-- About the USTAG Section -->
+    <section class="ustag-section">
+        <div class="section-header">
+            <div class="section-label">About the USTAG</div>
+            <h2 class="section-title">The U.S. Technical Advisory Group</h2>
+        </div>
+        <div class="about-content">
+            <p>The US Technical Advisory Group (TAG) to ISO Technical Committee (TC) 301 is the official TAG accredited by the American National Standards Institute (ANSI) responsible for representing US positions on energy management, efficiency, and savings standards being developed by the International Standards Organization (ISO). It is composed of energy management experts willing to devote time and energy to the TC process to develop standards useful to U.S. industry, commercial enterprises and other organizations.</p>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities-section">
+        <div class="section-header">
+            <div class="section-label">What We Do</div>
+            <h2 class="section-title">Activities</h2>
+        </div>
+        <div class="about-content" style="margin-bottom: 48px;">
+            <p>The US TAG, following ANSI and ISO procedures, provides input on international standards drafts and votes on approving documents to become international standards. Input is provided at the various stages in a standards development either through on-line processes managed by the ISO or ANSI or in-person meetings with other countries delegates. The intent is to determine consensus which is the basis of the final standard.</p>
+            <p>In addition to developing standards, the USTAG provides input on interpretation, clarification, continuation and withdrawal of ISO TC 301 standards.</p>
+        </div>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div class="activity-icon">1</div>
+                <h4>Standards Development</h4>
+                <p>Provide input on international standards drafts at various stages through online processes managed by ISO or ANSI, or in-person meetings with delegates from other countries.</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon">2</div>
+                <h4>Consensus Building</h4>
+                <p>Work to determine consensus, which is the basis of final international standards, ensuring U.S. perspectives are represented in the global process.</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon">3</div>
+                <h4>Voting & Approval</h4>
+                <p>Vote on approving documents to become international standards, including interim and final approval of relevant TC 301 documents.</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon">4</div>
+                <h4>Interpretation & Clarification</h4>
+                <p>Provide input on interpretation and clarification of ISO TC 301 standards to ensure proper understanding and implementation.</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon">5</div>
+                <h4>Standards Review</h4>
+                <p>Participate in decisions regarding continuation, revision, and withdrawal of existing ISO TC 301 standards.</p>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon">6</div>
+                <h4>U.S. Representation</h4>
+                <p>Represent U.S. positions on energy management, efficiency, and savings standards being developed by ISO.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standards Section -->
+    <section class="standards-section">
+        <div class="section-header">
+            <div class="section-label">Standards</div>
+            <h2 class="section-title">ISO TC 301 Standards</h2>
+        </div>
+        <div class="standards-content">
+            <p>The standards on which the USTAG has worked can be found at the ISO TC 301 catalogue. These include ISO 50001, standards giving additional guidance and clarification on the components of ISO 50001, and standards providing guidance for auditing and certifying conformance with ISO 50001.</p>
+            <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="standards-link">View ISO/TC 301 Standards Catalogue</a>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section class="members-section">
+        <div class="section-header">
+            <div class="section-label">Membership</div>
+            <h2 class="section-title">Current Members</h2>
+            <p class="section-subtitle">The U.S. TAG to TC 301 follows the processes provided by ANSI and the ISO to ensure its inputs meets their requirements. It also has its own Business Plan describing rules for membership, conducting its activities, and ensuring a fair consideration of input from all its members.</p>
+        </div>
+        <table class="members-table">
+            <thead>
+                <tr>
+                    <th>Member</th>
+                    <th>Interest Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="member-name">Deann Desai</span></td>
+                    <td><span class="member-role-highlight">TC 301 Chair & U.S. TAG Chair</span></td>
+                </tr>
+                <tr>
+                    <td><span class="member-name">Peter Therkelsen</span></td>
+                    <td>User</td>
+                </tr>
+                <tr>
+                    <td><span class="member-name">Paul Shaffer</span></td>
+                    <td>User</td>
+                </tr>
+                <tr>
+                    <td><span class="member-name">Michael Stowe</span></td>
+                    <td>General Interest</td>
+                </tr>
+                <tr>
+                    <td><span class="member-name">Nikhil Gandi</span></td>
+                    <td>User</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links-section">
+        <div class="section-header">
+            <div class="section-label">Resources</div>
+            <h2 class="section-title">Quick Links</h2>
+        </div>
+        <div class="links-grid">
+            <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="link-card">
+                <h3>ISO/TC 301 Homepage</h3>
+                <p>Official ISO Technical Committee page</p>
+            </a>
+            <a href="https://www.iso.org/committee/6077221/x/catalogue/" target="_blank" class="link-card">
+                <h3>Work Programme</h3>
+                <p>Current standards and ongoing projects</p>
+            </a>
+            <a href="https://www.ansi.org" target="_blank" class="link-card">
+                <h3>ANSI</h3>
+                <p>American National Standards Institute</p>
+            </a>
+            <a href="https://www.iso.org/standard/69426.html" target="_blank" class="link-card">
+                <h3>ISO 50001:2018</h3>
+                <p>Energy management systems standard</p>
+            </a>
+            <a href="https://50001insights.lbl.gov/" target="_blank" class="link-card">
+                <h3>50001 Insights</h3>
+                <p>Energy Management System implementation examples</p>
+            </a>
+            <a href="https://www.energy.gov/eere/amo/50001-ready-program" target="_blank" class="link-card">
+                <h3>50001 Ready Program</h3>
+                <p>DOE's free implementation platform</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>For further information, including interest in joining the U.S. TAG, contact:</p>
+            <div class="contact-card">
+                <div class="contact-name">Deann Desai</div>
+                <div class="contact-role">TC 301 Chair & U.S. TAG to TC 301 Chair</div>
+                <a href="mailto:Deann@pddd.com" class="contact-email">Deann@pddd.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>U.S. Technical Advisory Group to ISO/TC 301 | Accredited by ANSI</p>
+        <p class="links">
+            <a href="https://www.iso.org/committee/6077221.html" target="_blank">ISO/TC 301</a>
+            <a href="https://www.ansi.org" target="_blank">ANSI</a>
+        </p>
+    </footer>
+
+</body>
+</html>
