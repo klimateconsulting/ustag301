@@ -33,20 +33,21 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
+            padding: 20px;
         }
         .password-box {
             background: white;
-            padding: 48px;
+            padding: 40px 32px;
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             max-width: 400px;
-            width: 90%;
+            width: 100%;
         }
         .password-box h2 {
             color: #003366;
             margin-bottom: 8px;
-            font-size: 24px;
+            font-size: 22px;
         }
         .password-box p {
             color: #6b7280;
@@ -61,6 +62,7 @@
             font-size: 16px;
             margin-bottom: 16px;
             outline: none;
+            -webkit-appearance: none;
         }
         .password-box input:focus {
             border-color: #0066cc;
@@ -75,6 +77,7 @@
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
         .password-box .error {
             color: #dc2626;
@@ -120,55 +123,6 @@
             line-height: 1.4;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-        }
-        .image-grid-item {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .image-grid-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,51,102,0.4);
-            transition: background 0.3s ease;
-        }
-        .image-grid-item:hover::before {
-            background: rgba(0,51,102,0.2);
-        }
-        .image-grid-item span {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        }
-        @media (max-width: 768px) {
-            .image-banner {
-                height: 200px;
-                background-attachment: scroll;
-            }
-            .image-banner-content h3 {
-                font-size: 20px;
-            }
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
-            .image-grid-item {
-                height: 180px;
-            }
-        }
 
         /* Header */
         html {
@@ -179,7 +133,7 @@
         }
         .header {
             background: #fff;
-            padding: 16px 48px;
+            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -197,7 +151,7 @@
         }
 
         .logo-text {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: #003366;
             letter-spacing: -0.3px;
@@ -208,7 +162,7 @@
         }
 
         .logo-subtitle {
-            font-size: 12px;
+            font-size: 11px;
             color: #6b7280;
             font-weight: 500;
             text-transform: uppercase;
@@ -225,9 +179,24 @@
             text-decoration: underline;
         }
 
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .menu-toggle svg {
+            width: 24px;
+            height: 24px;
+            color: #003366;
+        }
+
         .header-nav {
             display: flex;
-            gap: 32px;
+            gap: 24px;
         }
 
         .header-nav a {
@@ -266,7 +235,7 @@
             background-position: center;
             background-attachment: fixed;
             color: white;
-            padding: 120px 48px;
+            padding: 100px 24px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -295,29 +264,29 @@
             backdrop-filter: blur(10px);
             padding: 8px 20px;
             border-radius: 100px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -1px;
         }
 
         .hero h2 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 400;
             opacity: 0.9;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 17px;
+            font-size: 16px;
             opacity: 0.85;
             line-height: 1.7;
             max-width: 650px;
@@ -326,7 +295,7 @@
 
         /* Section styles */
         section {
-            padding: 80px 24px;
+            padding: 60px 20px;
         }
 
         .container {
@@ -336,20 +305,21 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 40px;
         }
 
         .section-title {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             color: #1a1a2e;
             letter-spacing: -0.5px;
         }
 
         .section-subtitle {
-            font-size: 17px;
+            font-size: 16px;
             color: #6b7280;
             margin-top: 16px;
+            line-height: 1.7;
         }
 
         /* About Section */
@@ -358,7 +328,7 @@
         }
 
         .about-content p {
-            font-size: 17px;
+            font-size: 16px;
             color: #4b5563;
             line-height: 1.8;
             margin-bottom: 20px;
@@ -370,7 +340,7 @@
 
         .highlight-box {
             background: #e0f2fe;
-            padding: 16px 24px;
+            padding: 16px 20px;
             border-radius: 8px;
             border-left: 4px solid #0066cc;
             margin: 24px 0;
@@ -399,12 +369,12 @@
         .activities-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 20px;
         }
 
         .activity-card {
             background: white;
-            padding: 32px;
+            padding: 28px 24px;
             border-radius: 16px;
             border: 1px solid #e5e7eb;
             transition: all 0.2s ease;
@@ -416,20 +386,24 @@
         }
 
         .activity-icon {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, #003366, #0066cc);
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
+        }
+
+        .activity-icon svg {
+            width: 28px;
+            height: 28px;
             color: white;
-            font-size: 20px;
         }
 
         .activity-card h4 {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
             color: #1a1a2e;
             margin-bottom: 8px;
@@ -451,7 +425,7 @@
         }
 
         .standards-content p {
-            font-size: 17px;
+            font-size: 16px;
             color: #4b5563;
             line-height: 1.8;
             margin-bottom: 24px;
@@ -467,6 +441,7 @@
             font-weight: 600;
             font-size: 15px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .standards-link:hover {
@@ -482,11 +457,15 @@
         .members-table {
             width: 100%;
             border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .members-table th,
         .members-table td {
-            padding: 16px 24px;
+            padding: 16px 20px;
             text-align: left;
             border-bottom: 1px solid #e5e7eb;
         }
@@ -494,7 +473,7 @@
         .members-table th {
             background: #e5e7eb;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             color: #1a1a2e;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -521,6 +500,35 @@
             border-radius: 4px;
             font-size: 13px;
             font-weight: 500;
+            display: inline-block;
+        }
+
+        /* Mobile members cards */
+        .members-cards {
+            display: none;
+        }
+
+        .member-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .member-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .member-card .member-name {
+            font-size: 17px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .member-card .member-category {
+            font-size: 14px;
+            color: #6b7280;
         }
 
         /* Links Section */
@@ -531,17 +539,18 @@
         .links-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 16px;
         }
 
         .link-card {
             display: block;
-            padding: 28px;
+            padding: 24px 20px;
             background: #f8fafc;
-            border-radius: 16px;
+            border-radius: 12px;
             text-decoration: none;
             transition: all 0.2s ease;
             border: 1px solid #e5e7eb;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .link-card:hover {
@@ -550,7 +559,7 @@
         }
 
         .link-card h3 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             color: #1a1a2e;
             margin-bottom: 6px;
@@ -572,20 +581,20 @@
         }
 
         .contact-content h2 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 16px;
         }
 
         .contact-content p {
-            font-size: 17px;
+            font-size: 16px;
             opacity: 0.9;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .contact-card {
             background: rgba(255,255,255,0.08);
-            padding: 32px;
+            padding: 28px 32px;
             border-radius: 16px;
             display: inline-block;
         }
@@ -617,7 +626,7 @@
             background: #001f3f;
             color: white;
             text-align: center;
-            padding: 32px 48px;
+            padding: 28px 20px;
         }
 
         footer p {
@@ -638,41 +647,109 @@
             margin: 0 12px;
         }
 
-        /* Responsive */
+        /* Tablet */
         @media (max-width: 1024px) {
-            .activities-grid,
+            .activities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .links-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
-            section {
-                padding: 60px 24px;
+            .menu-toggle {
+                display: block;
             }
 
             .header {
-                padding: 16px 24px;
-                flex-direction: column;
-                gap: 16px;
+                padding: 12px 16px;
             }
-            .header-left {
+
+            .header-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                flex-direction: column;
                 align-items: center;
+                justify-content: center;
+                gap: 0;
+                z-index: 200;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .header-nav.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .header-nav a {
+                font-size: 20px;
+                padding: 16px 24px;
+                width: 100%;
                 text-align: center;
             }
-            .header-nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 8px 20px;
+
+            .header-nav a::after {
+                display: none;
             }
-            .header-nav a {
-                font-size: 13px;
-                padding: 6px 0;
+
+            .nav-close {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+            }
+
+            .nav-close svg {
+                width: 28px;
+                height: 28px;
+                color: #003366;
+            }
+
+            .logo-text {
+                font-size: 16px;
+            }
+
+            .logo-subtitle {
+                font-size: 10px;
+            }
+
+            section {
+                padding: 48px 16px;
+            }
+
+            section[id] {
+                scroll-margin-top: 60px;
+            }
+
+            .image-banner {
+                height: 200px;
+                background-attachment: scroll;
+            }
+
+            .image-banner-content h3 {
+                font-size: 18px;
+                padding: 0 16px;
             }
 
             .hero {
-                padding: 80px 24px;
+                padding: 60px 16px;
                 background-attachment: scroll;
+            }
+
+            .hero-badge {
+                font-size: 11px;
+                padding: 6px 14px;
             }
 
             .hero h1 {
@@ -680,21 +757,146 @@
             }
 
             .hero h2 {
-                font-size: 18px;
+                font-size: 17px;
             }
 
-            .activities-grid,
-            .links-grid {
-                grid-template-columns: 1fr;
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section-header {
+                margin-bottom: 32px;
             }
 
             .section-title {
+                font-size: 26px;
+            }
+
+            .section-subtitle {
+                font-size: 15px;
+            }
+
+            .about-content p {
+                font-size: 15px;
+            }
+
+            .highlight-box {
+                padding: 14px 16px;
+                font-size: 15px;
+            }
+
+            .activities-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .activity-card {
+                padding: 24px 20px;
+            }
+
+            .activity-icon {
+                width: 52px;
+                height: 52px;
+            }
+
+            .activity-icon svg {
+                width: 26px;
+                height: 26px;
+            }
+
+            .activity-card h4 {
+                font-size: 16px;
+            }
+
+            .standards-content p {
+                font-size: 15px;
+            }
+
+            .standards-link {
+                padding: 12px 24px;
+                font-size: 14px;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            /* Switch to card layout for members on mobile */
+            .members-table {
+                display: none;
+            }
+
+            .members-cards {
+                display: block;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .link-card {
+                padding: 20px 16px;
+            }
+
+            .link-card h3 {
+                font-size: 15px;
+            }
+
+            .contact-content h2 {
+                font-size: 24px;
+            }
+
+            .contact-content p {
+                font-size: 15px;
+            }
+
+            .contact-card {
+                padding: 24px 20px;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .contact-name {
+                font-size: 18px;
+            }
+
+            .contact-role {
+                font-size: 13px;
+            }
+
+            .contact-email {
+                font-size: 15px;
+            }
+
+            footer {
+                padding: 24px 16px;
+            }
+
+            footer p {
+                font-size: 13px;
+            }
+
+            footer .links a {
+                margin: 0 8px;
+                font-size: 13px;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 380px) {
+            .hero h1 {
                 font-size: 28px;
             }
 
-            .members-table th,
-            .members-table td {
-                padding: 12px 16px;
+            .section-title {
+                font-size: 24px;
+            }
+
+            .password-box {
+                padding: 32px 24px;
+            }
+
+            .password-box h2 {
+                font-size: 20px;
             }
         }
     </style>
@@ -716,14 +918,24 @@
             <div class="logo-text">U.S. TAG to <span>ISO/TC 301</span></div>
             <div class="logo-subtitle">Accredited by <a href="https://www.ansi.org" target="_blank">ANSI</a></div>
         </div>
-        <nav class="header-nav">
-            <a href="#background">Background</a>
-            <a href="#about">About</a>
-            <a href="#activities">Activities</a>
-            <a href="#standards">Standards</a>
-            <a href="#members">Members</a>
-            <a href="#resources">Resources</a>
-            <a href="#contact">Contact</a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+        <nav class="header-nav" id="headerNav">
+            <button class="nav-close" onclick="toggleMenu()" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <a href="#background" onclick="closeMenu()">Background</a>
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#activities" onclick="closeMenu()">Activities</a>
+            <a href="#standards" onclick="closeMenu()">Standards</a>
+            <a href="#members" onclick="closeMenu()">Members</a>
+            <a href="#resources" onclick="closeMenu()">Resources</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
         </nav>
     </header>
 
@@ -769,38 +981,68 @@
             <div class="section-header">
                 <h2 class="section-title">Activities</h2>
             </div>
-            <div class="about-content" style="margin-bottom: 48px;">
+            <div class="about-content" style="margin-bottom: 40px;">
                 <p>The US TAG, following ANSI and ISO procedures, provides input on international standards drafts and votes on approving documents to become international standards. Input is provided at the various stages in a standards development either through on-line processes managed by the ISO or ANSI or in-person meetings with other countries delegates. The intent is to determine consensus which is the basis of the final standard.</p>
                 <p>In addition to developing standards, the USTAG provides input on interpretation, clarification, continuation and withdrawal of ISO TC 301 standards.</p>
             </div>
             <div class="activities-grid">
                 <div class="activity-card">
-                    <div class="activity-icon">1</div>
+                    <div class="activity-icon">
+                        <!-- Document/Standards Development Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                        </svg>
+                    </div>
                     <h4>Standards Development</h4>
                     <p>Provide input on international standards drafts at various stages through online processes managed by ISO or ANSI, or in-person meetings with delegates from other countries.</p>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-icon">2</div>
+                    <div class="activity-icon">
+                        <!-- Consensus/People Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                        </svg>
+                    </div>
                     <h4>Consensus Building</h4>
                     <p>Work to determine consensus, which is the basis of final international standards, ensuring U.S. perspectives are represented in the global process.</p>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-icon">3</div>
+                    <div class="activity-icon">
+                        <!-- Voting/Ballot Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                    </div>
                     <h4>Voting & Approval</h4>
                     <p>Vote on approving documents to become international standards, including interim and final approval of relevant TC 301 documents.</p>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-icon">4</div>
+                    <div class="activity-icon">
+                        <!-- Interpretation/Lightbulb Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                        </svg>
+                    </div>
                     <h4>Interpretation & Clarification</h4>
                     <p>Provide input on interpretation and clarification of ISO TC 301 standards to ensure proper understanding and implementation.</p>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-icon">5</div>
+                    <div class="activity-icon">
+                        <!-- Review/Clipboard Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
+                        </svg>
+                    </div>
                     <h4>Standards Review</h4>
                     <p>Participate in decisions regarding continuation, revision, and withdrawal of existing ISO TC 301 standards.</p>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-icon">6</div>
+                    <div class="activity-icon">
+                        <!-- Globe/Representation Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
                     <h4>U.S. Representation</h4>
                     <p>Represent U.S. positions on energy management, efficiency, and savings standards being developed by ISO.</p>
                 </div>
@@ -835,6 +1077,7 @@
                 <h2 class="section-title">Current Members</h2>
                 <p class="section-subtitle">The U.S. TAG to TC 301 follows the processes provided by ANSI and the ISO to ensure its inputs meets their requirements. It also has its own Business Plan describing rules for membership, conducting its activities, and ensuring a fair consideration of input from all its members.</p>
             </div>
+            <!-- Desktop table -->
             <table class="members-table">
                 <thead>
                     <tr>
@@ -865,6 +1108,29 @@
                     </tr>
                 </tbody>
             </table>
+            <!-- Mobile cards -->
+            <div class="members-cards">
+                <div class="member-card">
+                    <span class="member-name">Deann Desai</span>
+                    <span class="member-role-highlight">TC 301 Chair & U.S. TAG Chair</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Peter Therkelsen</span>
+                    <span class="member-category">User</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Paul Shaffer</span>
+                    <span class="member-category">User</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Michael Stowe</span>
+                    <span class="member-category">General Interest</span>
+                </div>
+                <div class="member-card">
+                    <span class="member-name">Nikhil Gandi</span>
+                    <span class="member-category">User</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -947,6 +1213,14 @@
     if (sessionStorage.getItem('auth') === '1') {
         document.getElementById('passwordOverlay').style.display = 'none';
         document.getElementById('mainContent').classList.add('unlocked');
+    }
+
+    function toggleMenu() {
+        document.getElementById('headerNav').classList.toggle('active');
+    }
+
+    function closeMenu() {
+        document.getElementById('headerNav').classList.remove('active');
     }
     </script>
 </body>
