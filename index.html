@@ -694,13 +694,9 @@
                 padding: 16px 24px;
                 width: 100%;
                 text-align: center;
-                border: none;
-                border-left: none;
-                background: none;
             }
 
-            .header-nav a::after,
-            .header-nav a::before {
+            .header-nav a::after {
                 display: none;
             }
 
@@ -933,7 +929,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
-            <a href="#" onclick="closeMenu(); window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Home</a>
+            <a href="#top" onclick="closeMenu()">Home</a>
             <a href="#background" onclick="closeMenu()">Background</a>
             <a href="#about" onclick="closeMenu()">About</a>
             <a href="#activities" onclick="closeMenu()">Activities</a>
@@ -945,7 +941,7 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="top">
         <div class="hero-content">
             <div class="hero-badge">U.S. Technical Advisory Group</div>
             <h1>ISO/TC 301</h1>
