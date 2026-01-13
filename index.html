@@ -148,9 +148,6 @@
             display: flex;
             flex-direction: column;
             gap: 2px;
-            text-decoration: none;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
         }
 
         .logo-text {
@@ -917,10 +914,10 @@
     <div class="main-content" id="mainContent">
     <!-- Header -->
     <header class="header">
-        <a href="#" class="header-left" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        <div class="header-left">
             <div class="logo-text">U.S. TAG to <span>ISO/TC 301</span></div>
-            <div class="logo-subtitle">Accredited by ANSI</div>
-        </a>
+            <div class="logo-subtitle">Accredited by <a href="https://www.ansi.org" target="_blank">ANSI</a></div>
+        </div>
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
