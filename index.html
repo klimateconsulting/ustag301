@@ -102,51 +102,76 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .header-left {
             display: flex;
-            align-items: center;
-            gap: 12px;
+            flex-direction: column;
+            gap: 2px;
         }
 
         .logo-text {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             color: #003366;
+            letter-spacing: -0.3px;
         }
 
         .logo-text span {
             color: #0066cc;
         }
 
-        .header-right {
-            font-size: 14px;
+        .logo-subtitle {
+            font-size: 12px;
             color: #6b7280;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .header-right a {
+        .logo-subtitle a {
             color: #0066cc;
             text-decoration: none;
+            font-weight: 600;
         }
 
-        .header-right a:hover {
+        .logo-subtitle a:hover {
             text-decoration: underline;
         }
+
         .header-nav {
             display: flex;
-            gap: 24px;
+            gap: 32px;
         }
+
         .header-nav a {
             color: #4b5563;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: all 0.2s ease;
+            padding: 8px 0;
+            position: relative;
         }
+
         .header-nav a:hover {
             color: #0066cc;
+        }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0066cc;
+            transition: width 0.2s ease;
+        }
+
+        .header-nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero */
@@ -564,15 +589,20 @@
             .header {
                 padding: 16px 24px;
                 flex-direction: column;
-                gap: 12px;
+                gap: 16px;
+            }
+            .header-left {
+                align-items: center;
+                text-align: center;
             }
             .header-nav {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 12px 16px;
+                gap: 8px 20px;
             }
             .header-nav a {
                 font-size: 13px;
+                padding: 6px 0;
             }
 
             .hero {
@@ -618,6 +648,7 @@
     <header class="header">
         <div class="header-left">
             <div class="logo-text">U.S. TAG to <span>ISO/TC 301</span></div>
+            <div class="logo-subtitle">Accredited by <a href="https://www.ansi.org" target="_blank">ANSI</a></div>
         </div>
         <nav class="header-nav">
             <a href="#background">Background</a>
@@ -628,9 +659,6 @@
             <a href="#resources">Resources</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="header-right">
-            Accredited by <a href="https://www.ansi.org" target="_blank">ANSI</a>
-        </div>
     </header>
 
     <!-- Hero -->
