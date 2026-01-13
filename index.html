@@ -326,21 +326,17 @@
 
         /* Section styles */
         section {
-            padding: 80px 48px;
+            padding: 80px 24px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
             margin-bottom: 48px;
-        }
-
-        .section-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: #0066cc;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
         }
 
         .section-title {
@@ -354,19 +350,11 @@
             font-size: 17px;
             color: #6b7280;
             margin-top: 16px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         /* About Section */
         .about-section {
             background: #f8fafc;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
         }
 
         .about-content p {
@@ -412,8 +400,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            max-width: 1100px;
-            margin: 0 auto;
         }
 
         .activity-card {
@@ -461,8 +447,6 @@
         }
 
         .standards-content {
-            max-width: 900px;
-            margin: 0 auto;
             text-align: center;
         }
 
@@ -496,8 +480,6 @@
         }
 
         .members-table {
-            max-width: 700px;
-            margin: 0 auto;
             width: 100%;
             border-collapse: collapse;
         }
@@ -550,8 +532,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
         }
 
         .link-card {
@@ -588,8 +568,6 @@
         }
 
         .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
             text-align: center;
         }
 
@@ -761,77 +739,85 @@
 
     <!-- Background Section -->
     <section class="about-section" id="background">
-        <div class="section-header">
-            <h2 class="section-title">What is the U.S. Technical Advisory Group to ISO TC 301?</h2>
-        </div>
-        <div class="about-content">
-            <p>Strategic Energy Management (SEM) is practiced by many organizations to improve energy performance, save costs, and reduce unwanted emissions. While SEM can take many forms, the international standard for SEM is provided by <strong>ISO 50001:2018 – Energy Management</strong> developed under the procedures of the International Standards Organization (ISO). It is this form of SEM that has international recognition as representing superior management practice.</p>
-            <p class="highlight-box">For examples of SEM implementation, see <a href="https://50001insights.lbl.gov/" target="_blank">Energy Management System Insights</a></p>
-            <p>The ISO operates through Technical Committees (TC) responsible for specific scopes. ISO 50001 is in the scope of <strong>TC 301</strong>, the technical committee responsible for standards on energy management and determining energy savings. In the United States the member organization to the ISO is the American National Standards Institute (ANSI). ANSI accredits Technical Advisory Groups (TAG) for the TCs with scopes of interest to organizations in the U.S. These TAGs develop the position of the U.S. on their respective TC activities and ballot the interim and final approval of relevant documents within a Technical Committee. In the United States, the national inputs to ISO TC 301-Energy Management and Energy Savings is the U.S. TAG to 301 (TAG 301).</p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What is the U.S. Technical Advisory Group to ISO TC 301?</h2>
+            </div>
+            <div class="about-content">
+                <p>Strategic Energy Management (SEM) is practiced by many organizations to improve energy performance, save costs, and reduce unwanted emissions. While SEM can take many forms, the international standard for SEM is provided by <strong>ISO 50001:2018 – Energy Management</strong> developed under the procedures of the International Standards Organization (ISO). It is this form of SEM that has international recognition as representing superior management practice.</p>
+                <p class="highlight-box">For examples of SEM implementation, see <a href="https://50001insights.lbl.gov/" target="_blank">Energy Management System Insights</a></p>
+                <p>The ISO operates through Technical Committees (TC) responsible for specific scopes. ISO 50001 is in the scope of <strong>TC 301</strong>, the technical committee responsible for standards on energy management and determining energy savings. In the United States the member organization to the ISO is the American National Standards Institute (ANSI). ANSI accredits Technical Advisory Groups (TAG) for the TCs with scopes of interest to organizations in the U.S. These TAGs develop the position of the U.S. on their respective TC activities and ballot the interim and final approval of relevant documents within a Technical Committee. In the United States, the national inputs to ISO TC 301-Energy Management and Energy Savings is the U.S. TAG to 301 (TAG 301).</p>
+            </div>
         </div>
     </section>
 
     <!-- About the USTAG Section -->
     <section class="ustag-section" id="about">
-        <div class="section-header">
-            <h2 class="section-title">The U.S. Technical Advisory Group</h2>
-        </div>
-        <div class="about-content">
-            <p>The US Technical Advisory Group (TAG) to ISO Technical Committee (TC) 301 is the official TAG accredited by the American National Standards Institute (ANSI) responsible for representing US positions on energy management, efficiency, and savings standards being developed by the International Standards Organization (ISO). It is composed of energy management experts willing to devote time and energy to the TC process to develop standards useful to U.S. industry, commercial enterprises and other organizations.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The U.S. Technical Advisory Group</h2>
+            </div>
+            <div class="about-content">
+                <p>The US Technical Advisory Group (TAG) to ISO Technical Committee (TC) 301 is the official TAG accredited by the American National Standards Institute (ANSI) responsible for representing US positions on energy management, efficiency, and savings standards being developed by the International Standards Organization (ISO). It is composed of energy management experts willing to devote time and energy to the TC process to develop standards useful to U.S. industry, commercial enterprises and other organizations.</p>
+            </div>
         </div>
     </section>
 
     <!-- Activities Section -->
     <section class="activities-section" id="activities">
-        <div class="section-header">
-            <h2 class="section-title">Activities</h2>
-        </div>
-        <div class="about-content" style="margin-bottom: 48px;">
-            <p>The US TAG, following ANSI and ISO procedures, provides input on international standards drafts and votes on approving documents to become international standards. Input is provided at the various stages in a standards development either through on-line processes managed by the ISO or ANSI or in-person meetings with other countries delegates. The intent is to determine consensus which is the basis of the final standard.</p>
-            <p>In addition to developing standards, the USTAG provides input on interpretation, clarification, continuation and withdrawal of ISO TC 301 standards.</p>
-        </div>
-        <div class="activities-grid">
-            <div class="activity-card">
-                <div class="activity-icon">1</div>
-                <h4>Standards Development</h4>
-                <p>Provide input on international standards drafts at various stages through online processes managed by ISO or ANSI, or in-person meetings with delegates from other countries.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Activities</h2>
             </div>
-            <div class="activity-card">
-                <div class="activity-icon">2</div>
-                <h4>Consensus Building</h4>
-                <p>Work to determine consensus, which is the basis of final international standards, ensuring U.S. perspectives are represented in the global process.</p>
+            <div class="about-content" style="margin-bottom: 48px;">
+                <p>The US TAG, following ANSI and ISO procedures, provides input on international standards drafts and votes on approving documents to become international standards. Input is provided at the various stages in a standards development either through on-line processes managed by the ISO or ANSI or in-person meetings with other countries delegates. The intent is to determine consensus which is the basis of the final standard.</p>
+                <p>In addition to developing standards, the USTAG provides input on interpretation, clarification, continuation and withdrawal of ISO TC 301 standards.</p>
             </div>
-            <div class="activity-card">
-                <div class="activity-icon">3</div>
-                <h4>Voting & Approval</h4>
-                <p>Vote on approving documents to become international standards, including interim and final approval of relevant TC 301 documents.</p>
-            </div>
-            <div class="activity-card">
-                <div class="activity-icon">4</div>
-                <h4>Interpretation & Clarification</h4>
-                <p>Provide input on interpretation and clarification of ISO TC 301 standards to ensure proper understanding and implementation.</p>
-            </div>
-            <div class="activity-card">
-                <div class="activity-icon">5</div>
-                <h4>Standards Review</h4>
-                <p>Participate in decisions regarding continuation, revision, and withdrawal of existing ISO TC 301 standards.</p>
-            </div>
-            <div class="activity-card">
-                <div class="activity-icon">6</div>
-                <h4>U.S. Representation</h4>
-                <p>Represent U.S. positions on energy management, efficiency, and savings standards being developed by ISO.</p>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">1</div>
+                    <h4>Standards Development</h4>
+                    <p>Provide input on international standards drafts at various stages through online processes managed by ISO or ANSI, or in-person meetings with delegates from other countries.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">2</div>
+                    <h4>Consensus Building</h4>
+                    <p>Work to determine consensus, which is the basis of final international standards, ensuring U.S. perspectives are represented in the global process.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">3</div>
+                    <h4>Voting & Approval</h4>
+                    <p>Vote on approving documents to become international standards, including interim and final approval of relevant TC 301 documents.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">4</div>
+                    <h4>Interpretation & Clarification</h4>
+                    <p>Provide input on interpretation and clarification of ISO TC 301 standards to ensure proper understanding and implementation.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">5</div>
+                    <h4>Standards Review</h4>
+                    <p>Participate in decisions regarding continuation, revision, and withdrawal of existing ISO TC 301 standards.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="activity-icon">6</div>
+                    <h4>U.S. Representation</h4>
+                    <p>Represent U.S. positions on energy management, efficiency, and savings standards being developed by ISO.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Standards Section -->
     <section class="standards-section" id="standards">
-        <div class="section-header">
-            <h2 class="section-title">ISO TC 301 Standards</h2>
-        </div>
-        <div class="standards-content">
-            <p>The standards on which the USTAG has worked can be found at the ISO TC 301 catalogue. These include ISO 50001, standards giving additional guidance and clarification on the components of ISO 50001, and standards providing guidance for auditing and certifying conformance with ISO 50001.</p>
-            <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="standards-link">View ISO/TC 301 Standards Catalogue</a>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ISO TC 301 Standards</h2>
+            </div>
+            <div class="standards-content">
+                <p>The standards on which the USTAG has worked can be found at the ISO TC 301 catalogue. These include ISO 50001, standards giving additional guidance and clarification on the components of ISO 50001, and standards providing guidance for auditing and certifying conformance with ISO 50001.</p>
+                <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="standards-link">View ISO/TC 301 Standards Catalogue</a>
+            </div>
         </div>
     </section>
 
@@ -844,72 +830,76 @@
 
     <!-- Members Section -->
     <section class="members-section" id="members">
-        <div class="section-header">
-            <h2 class="section-title">Current Members</h2>
-            <p class="section-subtitle">The U.S. TAG to TC 301 follows the processes provided by ANSI and the ISO to ensure its inputs meets their requirements. It also has its own Business Plan describing rules for membership, conducting its activities, and ensuring a fair consideration of input from all its members.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Current Members</h2>
+                <p class="section-subtitle">The U.S. TAG to TC 301 follows the processes provided by ANSI and the ISO to ensure its inputs meets their requirements. It also has its own Business Plan describing rules for membership, conducting its activities, and ensuring a fair consideration of input from all its members.</p>
+            </div>
+            <table class="members-table">
+                <thead>
+                    <tr>
+                        <th>Member</th>
+                        <th>Interest Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="member-name">Deann Desai</span></td>
+                        <td><span class="member-role-highlight">TC 301 Chair & U.S. TAG Chair</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="member-name">Peter Therkelsen</span></td>
+                        <td>User</td>
+                    </tr>
+                    <tr>
+                        <td><span class="member-name">Paul Shaffer</span></td>
+                        <td>User</td>
+                    </tr>
+                    <tr>
+                        <td><span class="member-name">Michael Stowe</span></td>
+                        <td>General Interest</td>
+                    </tr>
+                    <tr>
+                        <td><span class="member-name">Nikhil Gandi</span></td>
+                        <td>User</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <table class="members-table">
-            <thead>
-                <tr>
-                    <th>Member</th>
-                    <th>Interest Category</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span class="member-name">Deann Desai</span></td>
-                    <td><span class="member-role-highlight">TC 301 Chair & U.S. TAG Chair</span></td>
-                </tr>
-                <tr>
-                    <td><span class="member-name">Peter Therkelsen</span></td>
-                    <td>User</td>
-                </tr>
-                <tr>
-                    <td><span class="member-name">Paul Shaffer</span></td>
-                    <td>User</td>
-                </tr>
-                <tr>
-                    <td><span class="member-name">Michael Stowe</span></td>
-                    <td>General Interest</td>
-                </tr>
-                <tr>
-                    <td><span class="member-name">Nikhil Gandi</span></td>
-                    <td>User</td>
-                </tr>
-            </tbody>
-        </table>
     </section>
 
     <!-- Links Section -->
     <section class="links-section" id="resources">
-        <div class="section-header">
-            <h2 class="section-title">Quick Links</h2>
-        </div>
-        <div class="links-grid">
-            <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="link-card">
-                <h3>ISO/TC 301 Homepage</h3>
-                <p>Official ISO Technical Committee page</p>
-            </a>
-            <a href="https://www.iso.org/committee/6077221/x/catalogue/" target="_blank" class="link-card">
-                <h3>Work Programme</h3>
-                <p>Current standards and ongoing projects</p>
-            </a>
-            <a href="https://www.ansi.org" target="_blank" class="link-card">
-                <h3>ANSI</h3>
-                <p>American National Standards Institute</p>
-            </a>
-            <a href="https://www.iso.org/standard/69426.html" target="_blank" class="link-card">
-                <h3>ISO 50001:2018</h3>
-                <p>Energy management systems standard</p>
-            </a>
-            <a href="https://50001insights.lbl.gov/" target="_blank" class="link-card">
-                <h3>50001 Insights</h3>
-                <p>Energy Management System implementation examples</p>
-            </a>
-            <a href="https://www.energy.gov/eere/amo/50001-ready-program" target="_blank" class="link-card">
-                <h3>50001 Ready Program</h3>
-                <p>DOE's free implementation platform</p>
-            </a>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Links</h2>
+            </div>
+            <div class="links-grid">
+                <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="link-card">
+                    <h3>ISO/TC 301 Homepage</h3>
+                    <p>Official ISO Technical Committee page</p>
+                </a>
+                <a href="https://www.iso.org/committee/6077221/x/catalogue/" target="_blank" class="link-card">
+                    <h3>Work Programme</h3>
+                    <p>Current standards and ongoing projects</p>
+                </a>
+                <a href="https://www.ansi.org" target="_blank" class="link-card">
+                    <h3>ANSI</h3>
+                    <p>American National Standards Institute</p>
+                </a>
+                <a href="https://www.iso.org/standard/69426.html" target="_blank" class="link-card">
+                    <h3>ISO 50001:2018</h3>
+                    <p>Energy management systems standard</p>
+                </a>
+                <a href="https://50001insights.lbl.gov/" target="_blank" class="link-card">
+                    <h3>50001 Insights</h3>
+                    <p>Energy Management System implementation examples</p>
+                </a>
+                <a href="https://www.energy.gov/eere/amo/50001-ready-program" target="_blank" class="link-card">
+                    <h3>50001 Ready Program</h3>
+                    <p>DOE's free implementation platform</p>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -922,13 +912,15 @@
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
-        <div class="contact-content">
-            <h2>Contact Us</h2>
-            <p>For further information, including interest in joining the U.S. TAG, contact:</p>
-            <div class="contact-card">
-                <div class="contact-name">Deann Desai</div>
-                <div class="contact-role">TC 301 Chair & U.S. TAG to TC 301 Chair</div>
-                <a href="mailto:Deann@pddd.com" class="contact-email">Deann@pddd.com</a>
+        <div class="container">
+            <div class="contact-content">
+                <h2>Contact Us</h2>
+                <p>For further information, including interest in joining the U.S. TAG, contact:</p>
+                <div class="contact-card">
+                    <div class="contact-name">Deann Desai</div>
+                    <div class="contact-role">TC 301 Chair & U.S. TAG to TC 301 Chair</div>
+                    <a href="mailto:Deann@pddd.com" class="contact-email">Deann@pddd.com</a>
+                </div>
             </div>
         </div>
     </section>
