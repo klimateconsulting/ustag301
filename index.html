@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lf41kksAAAAADtkltOzgRwsk3e8o1lBlWNzvDqL"></script>
     <style>
         * {
             margin: 0;
@@ -930,8 +930,9 @@
                 <h2>Contact Us</h2>
                 <p>For further information, including interest in joining the U.S. TAG, please complete the form below.</p>
 
-                <form class="contact-form" action="https://formspree.io/f/xpwzgvqr" method="POST">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xlggeygo" method="POST">
                     <input type="hidden" name="_subject" value="New U.S. TAG to ISO/TC 301 Inquiry">
+                    <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
 
                     <div class="form-row">
                         <div class="form-group">
@@ -958,10 +959,6 @@
                     <div class="form-group">
                         <label for="reason">Reason for Reaching Out *</label>
                         <textarea id="reason" name="reason" required placeholder="Please describe your interest in the U.S. TAG to ISO/TC 301..."></textarea>
-                    </div>
-
-                    <div class="recaptcha-wrapper">
-                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
                     </div>
 
                     <button type="submit" class="submit-btn">Send Message</button>
@@ -1008,6 +1005,18 @@
     function closeMenu() {
         document.getElementById('headerNav').classList.remove('active');
     }
+
+    // reCAPTCHA v3 form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lf41kksAAAAADtkltOzgRwsk3e8o1lBlWNzvDqL', {action: 'submit'}).then(function(token) {
+                document.getElementById('recaptchaResponse').value = token;
+                form.submit();
+            });
+        });
+    });
     </script>
 </body>
 </html>
