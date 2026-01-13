@@ -86,6 +86,12 @@
         .main-content.unlocked { display: block; }
 
         /* Header */
+        html {
+            scroll-behavior: smooth;
+        }
+        section[id] {
+            scroll-margin-top: 80px;
+        }
         .header {
             background: #fff;
             padding: 16px 48px;
@@ -127,6 +133,20 @@
 
         .header-right a:hover {
             text-decoration: underline;
+        }
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+        .header-nav a {
+            color: #4b5563;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .header-nav a:hover {
+            color: #0066cc;
         }
 
         /* Hero */
@@ -546,6 +566,14 @@
                 flex-direction: column;
                 gap: 12px;
             }
+            .header-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 16px;
+            }
+            .header-nav a {
+                font-size: 13px;
+            }
 
             .hero {
                 padding: 80px 24px;
@@ -591,6 +619,15 @@
         <div class="header-left">
             <div class="logo-text">U.S. TAG to <span>ISO/TC 301</span></div>
         </div>
+        <nav class="header-nav">
+            <a href="#background">Background</a>
+            <a href="#about">About</a>
+            <a href="#activities">Activities</a>
+            <a href="#standards">Standards</a>
+            <a href="#members">Members</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
+        </nav>
         <div class="header-right">
             Accredited by <a href="https://www.ansi.org" target="_blank">ANSI</a>
         </div>
@@ -607,7 +644,7 @@
     </section>
 
     <!-- Background Section -->
-    <section class="about-section">
+    <section class="about-section" id="background">
         <div class="section-header">
             <div class="section-label">Background</div>
             <h2 class="section-title">What is the U.S. Technical Advisory Group to ISO TC 301?</h2>
@@ -620,7 +657,7 @@
     </section>
 
     <!-- About the USTAG Section -->
-    <section class="ustag-section">
+    <section class="ustag-section" id="about">
         <div class="section-header">
             <div class="section-label">About the USTAG</div>
             <h2 class="section-title">The U.S. Technical Advisory Group</h2>
@@ -631,7 +668,7 @@
     </section>
 
     <!-- Activities Section -->
-    <section class="activities-section">
+    <section class="activities-section" id="activities">
         <div class="section-header">
             <div class="section-label">What We Do</div>
             <h2 class="section-title">Activities</h2>
@@ -675,7 +712,7 @@
     </section>
 
     <!-- Standards Section -->
-    <section class="standards-section">
+    <section class="standards-section" id="standards">
         <div class="section-header">
             <div class="section-label">Standards</div>
             <h2 class="section-title">ISO TC 301 Standards</h2>
@@ -687,7 +724,7 @@
     </section>
 
     <!-- Members Section -->
-    <section class="members-section">
+    <section class="members-section" id="members">
         <div class="section-header">
             <div class="section-label">Membership</div>
             <h2 class="section-title">Current Members</h2>
@@ -726,7 +763,7 @@
     </section>
 
     <!-- Links Section -->
-    <section class="links-section">
+    <section class="links-section" id="resources">
         <div class="section-header">
             <div class="section-label">Resources</div>
             <h2 class="section-title">Quick Links</h2>
@@ -760,7 +797,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="contact-content">
             <h2>Contact Us</h2>
             <p>For further information, including interest in joining the U.S. TAG, contact:</p>
