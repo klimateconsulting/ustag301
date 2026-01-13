@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         * {
             margin: 0;
@@ -365,58 +366,9 @@
             background: white;
         }
 
-        /* Activities Grid */
+        /* Activities Section */
         .activities-section {
             background: #f8fafc;
-        }
-
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .activity-card {
-            background: white;
-            padding: 28px 24px;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.2s ease;
-        }
-
-        .activity-card:hover {
-            border-color: #0066cc;
-            box-shadow: 0 8px 30px rgba(0,102,204,0.1);
-        }
-
-        .activity-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #003366, #0066cc);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .activity-icon svg {
-            width: 28px;
-            height: 28px;
-            color: white;
-        }
-
-        .activity-card h4 {
-            font-size: 17px;
-            font-weight: 600;
-            color: #1a1a2e;
-            margin-bottom: 8px;
-        }
-
-        .activity-card p {
-            font-size: 14px;
-            color: #6b7280;
-            line-height: 1.6;
         }
 
         /* Standards Section */
@@ -453,91 +405,9 @@
             box-shadow: 0 8px 20px rgba(0,102,204,0.3);
         }
 
-        /* Members Section */
-        .members-section {
-            background: #f8fafc;
-        }
-
-        .members-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .members-table th,
-        .members-table td {
-            padding: 16px 20px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .members-table th {
-            background: #e5e7eb;
-            font-weight: 600;
-            font-size: 13px;
-            color: #1a1a2e;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .members-table td {
-            font-size: 15px;
-            color: #4b5563;
-        }
-
-        .members-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .member-name {
-            font-weight: 600;
-            color: #1a1a2e;
-        }
-
-        .member-role-highlight {
-            background: #e0f2fe;
-            color: #0066cc;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 500;
-            display: inline-block;
-        }
-
-        /* Mobile members cards */
-        .members-cards {
-            display: none;
-        }
-
-        .member-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 12px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .member-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .member-card .member-name {
-            font-size: 17px;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .member-card .member-category {
-            font-size: 14px;
-            color: #6b7280;
-        }
-
         /* Links Section */
         .links-section {
-            background: white;
+            background: #f8fafc;
         }
 
         .links-grid {
@@ -549,7 +419,7 @@
         .link-card {
             display: block;
             padding: 24px 20px;
-            background: #f8fafc;
+            background: white;
             border-radius: 12px;
             text-decoration: none;
             transition: all 0.2s ease;
@@ -574,54 +444,132 @@
             color: #6b7280;
         }
 
-        /* Contact Section */
+        /* Contact Form Section */
         .contact-section {
             background: #003366;
             color: white;
         }
 
         .contact-content {
-            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .contact-content h2 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 16px;
+            text-align: center;
         }
 
-        .contact-content p {
+        .contact-content > p {
             font-size: 16px;
             opacity: 0.9;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
+            text-align: center;
         }
 
-        .contact-card {
+        .contact-form {
             background: rgba(255,255,255,0.08);
-            padding: 28px 32px;
+            padding: 32px;
             border-radius: 16px;
-            display: inline-block;
         }
 
-        .contact-name {
-            font-size: 20px;
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #60a5fa;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .recaptcha-wrapper {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: white;
+            color: #003366;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
             font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .contact-info {
+            margin-top: 32px;
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            opacity: 0.8;
             margin-bottom: 8px;
         }
 
-        .contact-role {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 16px;
+        .contact-info .contact-name {
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 1;
         }
 
-        .contact-email {
+        .contact-info a {
             color: #60a5fa;
             text-decoration: none;
-            font-size: 16px;
         }
 
-        .contact-email:hover {
+        .contact-info a:hover {
             text-decoration: underline;
         }
 
@@ -653,9 +601,6 @@
 
         /* Tablet */
         @media (max-width: 1024px) {
-            .activities-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
             .links-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -790,29 +735,6 @@
                 font-size: 15px;
             }
 
-            .activities-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .activity-card {
-                padding: 24px 20px;
-            }
-
-            .activity-icon {
-                width: 52px;
-                height: 52px;
-            }
-
-            .activity-icon svg {
-                width: 26px;
-                height: 26px;
-            }
-
-            .activity-card h4 {
-                font-size: 16px;
-            }
-
             .standards-content p {
                 font-size: 15px;
             }
@@ -822,15 +744,6 @@
                 font-size: 14px;
                 width: 100%;
                 max-width: 280px;
-            }
-
-            /* Switch to card layout for members on mobile */
-            .members-table {
-                display: none;
-            }
-
-            .members-cards {
-                display: block;
             }
 
             .links-grid {
@@ -850,26 +763,21 @@
                 font-size: 24px;
             }
 
-            .contact-content p {
+            .contact-content > p {
                 font-size: 15px;
             }
 
-            .contact-card {
+            .contact-form {
                 padding: 24px 20px;
-                width: 100%;
-                max-width: 320px;
             }
 
-            .contact-name {
-                font-size: 18px;
+            .form-row {
+                grid-template-columns: 1fr;
             }
 
-            .contact-role {
-                font-size: 13px;
-            }
-
-            .contact-email {
-                font-size: 15px;
+            .recaptcha-wrapper {
+                transform: scale(0.9);
+                transform-origin: center;
             }
 
             footer {
@@ -903,6 +811,10 @@
             .password-box h2 {
                 font-size: 20px;
             }
+
+            .recaptcha-wrapper {
+                transform: scale(0.77);
+            }
         }
     </style>
 </head>
@@ -935,11 +847,10 @@
                 </svg>
             </button>
             <a href="#top" onclick="closeMenu()">Home</a>
-            <a href="#background" onclick="closeMenu()">Background</a>
+            <a href="#iso50001" onclick="closeMenu()">ISO 50001</a>
             <a href="#about" onclick="closeMenu()">About</a>
             <a href="#activities" onclick="closeMenu()">Activities</a>
             <a href="#standards" onclick="closeMenu()">Standards</a>
-            <a href="#members" onclick="closeMenu()">Members</a>
             <a href="#resources" onclick="closeMenu()">Resources</a>
             <a href="#contact" onclick="closeMenu()">Contact</a>
         </nav>
@@ -955,28 +866,44 @@
         </div>
     </section>
 
-    <!-- Background Section -->
-    <section class="about-section" id="background">
+    <!-- ISO 50001 Section -->
+    <section class="about-section" id="iso50001">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What is the U.S. Technical Advisory Group to ISO TC 301?</h2>
+                <h2 class="section-title">ISO 50001</h2>
             </div>
             <div class="about-content">
-                <p>Strategic Energy Management (SEM) is practiced by many organizations to improve energy performance, save costs, and reduce unwanted emissions. While SEM can take many forms, the international standard for SEM is provided by <strong>ISO 50001:2018 – Energy Management</strong> developed under the procedures of the International Standards Organization (ISO). It is this form of SEM that has international recognition as representing superior management practice.</p>
-                <p class="highlight-box">For examples of SEM implementation, see <a href="https://50001insights.lbl.gov/" target="_blank">Energy Management System Insights</a></p>
-                <p>The ISO operates through Technical Committees (TC) responsible for specific scopes. ISO 50001 is in the scope of <strong>TC 301</strong>, the technical committee responsible for standards on energy management and determining energy savings. In the United States the member organization to the ISO is the American National Standards Institute (ANSI). ANSI accredits Technical Advisory Groups (TAG) for the TCs with scopes of interest to organizations in the U.S. These TAGs develop the position of the U.S. on their respective TC activities and ballot the interim and final approval of relevant documents within a Technical Committee. In the United States, the national inputs to ISO TC 301-Energy Management and Energy Savings is the U.S. TAG to 301 (TAG 301).</p>
+                <p>Strategic Energy Management (SEM) is practiced by many organizations to improve energy performance, save costs, and reduce unwanted emissions. While SEM can take many forms, the internationally recognized standard for SEM is <strong>ISO 50001:2018 – Energy Management</strong> developed under the procedures of the International Standards Organization (ISO). ISO 50001 represents a globally recognized best practice for SEM for continual energy performance improvement.</p>
+                <p>Organizations certified to ISO 50001 benefit from sustained energy performance improvements, typically achieving <strong>4% annual energy savings year over year</strong> for more than a decade. Companies also report improved energy cost savings, sustainability, culture, productivity, and public relations resulting from ISO 50001.</p>
+                <div class="highlight-box">
+                    For examples of organizations' experience with SEM, see <a href="https://50001insights.lbl.gov/" target="_blank">Energy Management System Insights</a>
+                </div>
+                <p>For a step-by-step process on implementing ISO 50001, see the <a href="https://navigator.lbl.gov/" target="_blank" style="color: #0066cc; font-weight: 600;">50001 Ready Navigator</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ISO Technical Committees Section -->
+    <section class="ustag-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ISO Technical Committees and ISO/TC 301</h2>
+            </div>
+            <div class="about-content">
+                <p>The ISO operates through Technical Committees (TC) responsible for specific scopes. The scope of <strong>ISO/TC 301</strong> is energy management and energy savings with ISO 50001 as its focal point. In the United States the member organization to the ISO is the American National Standards Institute (ANSI).</p>
+                <p>When a TC has a scope of interest to organizations in the U.S., ANSI accredits a Technical Advisory Group (TAG) representing the U.S. to that TC. These TAGs develop the U.S. position on their respective TC activities and ballot the interim and final approval of relevant documents within a TC. The U.S. TAG to ISO/TC 301 serves as the national forum for U.S. input to ISO/TC 301.</p>
             </div>
         </div>
     </section>
 
     <!-- About the USTAG Section -->
-    <section class="ustag-section" id="about">
+    <section class="about-section" id="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">The U.S. Technical Advisory Group</h2>
+                <h2 class="section-title">About the U.S. TAG to ISO/TC 301</h2>
             </div>
             <div class="about-content">
-                <p>The US Technical Advisory Group (TAG) to ISO Technical Committee (TC) 301 is the official TAG accredited by the American National Standards Institute (ANSI) responsible for representing US positions on energy management, efficiency, and savings standards being developed by the International Standards Organization (ISO). It is composed of energy management experts willing to devote time and energy to the TC process to develop standards useful to U.S. industry, commercial enterprises and other organizations.</p>
+                <p>The U.S. TAG to ISO/TC 301 operates in accordance with the requirements of ANSI and the ISO as the U.S. TAG responsible for representing U.S. positions on energy management, efficiency, and savings standards being developed by the International Standards Organization (ISO). It is composed of energy management experts willing to devote time and energy to the TC process to develop standards useful to U.S. industry, commercial enterprises and other organizations.</p>
             </div>
         </div>
     </section>
@@ -985,72 +912,13 @@
     <section class="activities-section" id="activities">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Activities</h2>
+                <h2 class="section-title">TAG Activities</h2>
             </div>
-            <div class="about-content" style="margin-bottom: 40px;">
-                <p>The US TAG, following ANSI and ISO procedures, provides input on international standards drafts and votes on approving documents to become international standards. Input is provided at the various stages in a standards development either through on-line processes managed by the ISO or ANSI or in-person meetings with other countries delegates. The intent is to determine consensus which is the basis of the final standard.</p>
-                <p>In addition to developing standards, the USTAG provides input on interpretation, clarification, continuation and withdrawal of ISO TC 301 standards.</p>
-            </div>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <!-- Document/Standards Development Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                        </svg>
-                    </div>
-                    <h4>Standards Development</h4>
-                    <p>Provide input on international standards drafts at various stages through online processes managed by ISO or ANSI, or in-person meetings with delegates from other countries.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <!-- Consensus/People Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                        </svg>
-                    </div>
-                    <h4>Consensus Building</h4>
-                    <p>Work to determine consensus, which is the basis of final international standards, ensuring U.S. perspectives are represented in the global process.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <!-- Voting/Ballot Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                        </svg>
-                    </div>
-                    <h4>Voting & Approval</h4>
-                    <p>Vote on approving documents to become international standards, including interim and final approval of relevant TC 301 documents.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <!-- Interpretation/Lightbulb Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                        </svg>
-                    </div>
-                    <h4>Interpretation & Clarification</h4>
-                    <p>Provide input on interpretation and clarification of ISO TC 301 standards to ensure proper understanding and implementation.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <!-- Review/Clipboard Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
-                        </svg>
-                    </div>
-                    <h4>Standards Review</h4>
-                    <p>Participate in decisions regarding continuation, revision, and withdrawal of existing ISO TC 301 standards.</p>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <!-- Globe/Representation Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                        </svg>
-                    </div>
-                    <h4>U.S. Representation</h4>
-                    <p>Represent U.S. positions on energy management, efficiency, and savings standards being developed by ISO.</p>
+            <div class="about-content">
+                <p>The U.S. TAG, following ANSI and ISO procedures, provides input on international standards drafts and ballots on approving documents to become international standards. Input is provided at the various stages in standards development through consensus which is the basis of standardization.</p>
+                <p>In addition to developing standards, the U.S. TAG provides input on clarification, initiation, continuation or withdrawal of ISO/TC 301 standards. The U.S. TAG also provides input on related documents from other ISO Technical Committees who are working in the areas related to energy, energy efficiency, energy savings, emissions management, etc.</p>
+                <div class="highlight-box">
+                    <strong>Get Involved:</strong> The U.S. TAG to ISO/TC 301 invites anyone interested in this work to participate. Please use the contact form below to express your interest.
                 </div>
             </div>
         </div>
@@ -1060,11 +928,11 @@
     <section class="standards-section" id="standards">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">ISO TC 301 Standards</h2>
+                <h2 class="section-title">ISO/TC 301 Standards</h2>
             </div>
             <div class="standards-content">
-                <p>The standards on which the USTAG has worked can be found at the ISO TC 301 catalogue. These include ISO 50001, standards giving additional guidance and clarification on the components of ISO 50001, and standards providing guidance for auditing and certifying conformance with ISO 50001.</p>
-                <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="standards-link">View ISO/TC 301 Standards Catalogue</a>
+                <p>To see the list of standards, including ISO 50001:2018, that are developed by ISO/TC 301, visit the official ISO Technical Committee page.</p>
+                <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="standards-link">View ISO/TC 301 Standards</a>
             </div>
         </div>
     </section>
@@ -1076,96 +944,32 @@
         </div>
     </div>
 
-    <!-- Members Section -->
-    <section class="members-section" id="members">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Current Members</h2>
-                <p class="section-subtitle">The U.S. TAG to TC 301 follows the processes provided by ANSI and the ISO to ensure its inputs meets their requirements. It also has its own Business Plan describing rules for membership, conducting its activities, and ensuring a fair consideration of input from all its members.</p>
-            </div>
-            <!-- Desktop table -->
-            <table class="members-table">
-                <thead>
-                    <tr>
-                        <th>Member</th>
-                        <th>Interest Category</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="member-name">Deann Desai</span></td>
-                        <td><span class="member-role-highlight">TC 301 Chair & U.S. TAG Chair</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="member-name">Peter Therkelsen</span></td>
-                        <td>User</td>
-                    </tr>
-                    <tr>
-                        <td><span class="member-name">Paul Shaffer</span></td>
-                        <td>User</td>
-                    </tr>
-                    <tr>
-                        <td><span class="member-name">Michael Stowe</span></td>
-                        <td>General Interest</td>
-                    </tr>
-                    <tr>
-                        <td><span class="member-name">Nikhil Gandi</span></td>
-                        <td>User</td>
-                    </tr>
-                </tbody>
-            </table>
-            <!-- Mobile cards -->
-            <div class="members-cards">
-                <div class="member-card">
-                    <span class="member-name">Deann Desai</span>
-                    <span class="member-role-highlight">TC 301 Chair & U.S. TAG Chair</span>
-                </div>
-                <div class="member-card">
-                    <span class="member-name">Peter Therkelsen</span>
-                    <span class="member-category">User</span>
-                </div>
-                <div class="member-card">
-                    <span class="member-name">Paul Shaffer</span>
-                    <span class="member-category">User</span>
-                </div>
-                <div class="member-card">
-                    <span class="member-name">Michael Stowe</span>
-                    <span class="member-category">General Interest</span>
-                </div>
-                <div class="member-card">
-                    <span class="member-name">Nikhil Gandi</span>
-                    <span class="member-category">User</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Links Section -->
     <section class="links-section" id="resources">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Quick Links</h2>
+                <h2 class="section-title">Resources</h2>
             </div>
             <div class="links-grid">
                 <a href="https://www.iso.org/committee/6077221.html" target="_blank" class="link-card">
                     <h3>ISO/TC 301 Homepage</h3>
                     <p>Official ISO Technical Committee page</p>
                 </a>
-                <a href="https://www.iso.org/committee/6077221/x/catalogue/" target="_blank" class="link-card">
-                    <h3>Work Programme</h3>
-                    <p>Current standards and ongoing projects</p>
+                <a href="https://50001insights.lbl.gov/" target="_blank" class="link-card">
+                    <h3>50001 Insights</h3>
+                    <p>Energy Management System implementation examples</p>
                 </a>
-                <a href="https://www.ansi.org" target="_blank" class="link-card">
-                    <h3>ANSI</h3>
-                    <p>American National Standards Institute</p>
+                <a href="https://navigator.lbl.gov/" target="_blank" class="link-card">
+                    <h3>50001 Ready Navigator</h3>
+                    <p>Step-by-step ISO 50001 implementation guide</p>
                 </a>
                 <a href="https://www.iso.org/standard/69426.html" target="_blank" class="link-card">
                     <h3>ISO 50001:2018</h3>
                     <p>Energy management systems standard</p>
                 </a>
-                <a href="https://50001insights.lbl.gov/" target="_blank" class="link-card">
-                    <h3>50001 Insights</h3>
-                    <p>Energy Management System implementation examples</p>
+                <a href="https://www.ansi.org" target="_blank" class="link-card">
+                    <h3>ANSI</h3>
+                    <p>American National Standards Institute</p>
                 </a>
                 <a href="https://www.energy.gov/eere/amo/50001-ready-program" target="_blank" class="link-card">
                     <h3>50001 Ready Program</h3>
@@ -1175,23 +979,55 @@
         </div>
     </section>
 
-    <!-- Image Banner 2 -->
-    <div class="image-banner" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&q=80')">
-        <div class="image-banner-content">
-            <h3>Join Us in Shaping the Future of Energy Management</h3>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
+    <!-- Contact Section with Form -->
     <section class="contact-section" id="contact">
         <div class="container">
             <div class="contact-content">
                 <h2>Contact Us</h2>
-                <p>For further information, including interest in joining the U.S. TAG, contact:</p>
-                <div class="contact-card">
-                    <div class="contact-name">Deann Desai</div>
-                    <div class="contact-role">TC 301 Chair & U.S. TAG to TC 301 Chair</div>
-                    <a href="mailto:Deann@pddd.com" class="contact-email">Deann@pddd.com</a>
+                <p>For further information, including interest in joining the U.S. TAG, please complete the form below.</p>
+
+                <form class="contact-form" action="https://formspree.io/f/xpwzgvqr" method="POST">
+                    <input type="hidden" name="_subject" value="New U.S. TAG to ISO/TC 301 Inquiry">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position</label>
+                            <input type="text" id="position" name="position" placeholder="Your job title">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization" placeholder="Company or organization">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">Reason for Reaching Out *</label>
+                        <textarea id="reason" name="reason" required placeholder="Please describe your interest in the U.S. TAG to ISO/TC 301..."></textarea>
+                    </div>
+
+                    <div class="recaptcha-wrapper">
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <p>You can also contact us directly:</p>
+                    <p class="contact-name">Deann Desai</p>
+                    <p>TC 301 Chair & U.S. TAG Chair</p>
+                    <p><a href="mailto:Deann@pddd.com">Deann@pddd.com</a></p>
                 </div>
             </div>
         </div>
