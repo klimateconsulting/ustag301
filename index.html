@@ -21,6 +21,70 @@
             background: #fff;
         }
 
+        /* Password Protection */
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .password-box {
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+        .password-box h2 {
+            color: #003366;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        .password-box p {
+            color: #6b7280;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .password-box input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 16px;
+            outline: none;
+        }
+        .password-box input:focus {
+            border-color: #0066cc;
+        }
+        .password-box button {
+            width: 100%;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #003366, #0066cc);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .password-box .error {
+            color: #dc2626;
+            font-size: 14px;
+            margin-top: 12px;
+            display: none;
+        }
+        .main-content { display: none; }
+        .main-content.unlocked { display: block; }
+
         /* Header */
         .header {
             background: #fff;
@@ -512,7 +576,16 @@
     </style>
 </head>
 <body>
-
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-box">
+            <h2>U.S. TAG to ISO/TC 301</h2>
+            <p>This site is password protected.</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPassword()">
+            <button onclick="checkPassword()">Enter Site</button>
+            <p class="error" id="errorMsg">Incorrect password.</p>
+        </div>
+    </div>
+    <div class="main-content" id="mainContent">
     <!-- Header -->
     <header class="header">
         <div class="header-left">
@@ -707,6 +780,21 @@
             <a href="https://www.ansi.org" target="_blank">ANSI</a>
         </p>
     </footer>
-
+    </div>
+    <script>
+    function checkPassword() {
+        if (document.getElementById('passwordInput').value === 'iso50001') {
+            document.getElementById('passwordOverlay').style.display = 'none';
+            document.getElementById('mainContent').classList.add('unlocked');
+            sessionStorage.setItem('auth', '1');
+        } else {
+            document.getElementById('errorMsg').style.display = 'block';
+        }
+    }
+    if (sessionStorage.getItem('auth') === '1') {
+        document.getElementById('passwordOverlay').style.display = 'none';
+        document.getElementById('mainContent').classList.add('unlocked');
+    }
+    </script>
 </body>
 </html>
