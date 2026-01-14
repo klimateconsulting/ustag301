@@ -930,10 +930,7 @@
                 <h2>Contact Us</h2>
                 <p>For further information, including interest in joining the U.S. TAG, please complete the form below.</p>
 
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xlggeygo" method="POST">
-                    <input type="hidden" name="_subject" value="New U.S. TAG to ISO/TC 301 Inquiry">
-                    <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
-
+                <form class="contact-form" id="contactForm">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name *</label>
@@ -961,7 +958,8 @@
                         <textarea id="reason" name="reason" required placeholder="Please describe your interest in the U.S. TAG to ISO/TC 301..."></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                    <div id="formStatus" style="margin-top: 16px; text-align: center; display: none;"></div>
                 </form>
 
                 <div class="contact-info">
@@ -1006,14 +1004,51 @@
         document.getElementById('headerNav').classList.remove('active');
     }
 
-    // reCAPTCHA v3 form submission
+    // reCAPTCHA v3 + AJAX form submission
     document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var form = this;
+        var submitBtn = document.getElementById('submitBtn');
+        var formStatus = document.getElementById('formStatus');
+
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formStatus.style.display = 'none';
+
         grecaptcha.ready(function() {
             grecaptcha.execute('6Lf41kksAAAAADtkltOzgRwsk3e8o1lBlWNzvDqL', {action: 'submit'}).then(function(token) {
-                document.getElementById('recaptchaResponse').value = token;
-                form.submit();
+                // Prepare form data
+                var formData = new FormData(form);
+                formData.append('g-recaptcha-response', token);
+                formData.append('_subject', 'New U.S. TAG to ISO/TC 301 Inquiry');
+
+                // Submit via AJAX
+                fetch('https://formspree.io/f/xlggeygo', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(function(response) {
+                    if (response.ok) {
+                        // Success
+                        formStatus.innerHTML = '<span style="color: #4ade80; font-weight: 600;">Message sent successfully! We will be in touch soon.</span>';
+                        formStatus.style.display = 'block';
+                        form.reset();
+                    } else {
+                        // Error
+                        formStatus.innerHTML = '<span style="color: #f87171; font-weight: 600;">There was a problem sending your message. Please try again.</span>';
+                        formStatus.style.display = 'block';
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }).catch(function(error) {
+                    formStatus.innerHTML = '<span style="color: #f87171; font-weight: 600;">There was a problem sending your message. Please try again.</span>';
+                    formStatus.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                });
             });
         });
     });
