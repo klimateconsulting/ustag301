@@ -819,6 +819,7 @@
     </style>
 </head>
 <body>
+    <!-- PASSWORD PROTECTION - COMMENTED OUT
     <div class="password-overlay" id="passwordOverlay">
         <div class="password-box">
             <h2>U.S. TAG to ISO/TC 301</h2>
@@ -828,7 +829,8 @@
             <p class="error" id="errorMsg">Incorrect password.</p>
         </div>
     </div>
-    <div class="main-content" id="mainContent">
+    -->
+    <div class="main-content unlocked" id="mainContent">
     <!-- Header -->
     <header class="header">
         <div class="header-left">
@@ -1003,6 +1005,7 @@
     </footer>
     </div>
     <script>
+    /* PASSWORD PROTECTION - COMMENTED OUT
     function checkPassword() {
         if (document.getElementById('passwordInput').value === 'iso50001') {
             document.getElementById('passwordOverlay').style.display = 'none';
@@ -1016,6 +1019,7 @@
         document.getElementById('passwordOverlay').style.display = 'none';
         document.getElementById('mainContent').classList.add('unlocked');
     }
+    */
 
     function toggleMenu() {
         document.getElementById('headerNav').classList.toggle('active');
