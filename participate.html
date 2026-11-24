@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation FAQs | U.S. TAG to ISO/TC 301</title>
+    <meta name="description" content="Join the U.S. Technical Advisory Group (TAG) to ISO/TC 301 and help develop international standards for energy management. What participation looks like, what members do, and how to engage.">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6K2RFY7SK6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6K2RFY7SK6');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <style>
+        /* ============================================================
+           DESIGN TOKENS (shared with index.html)
+           ============================================================ */
+        :root {
+            --navy-950: #04101f;
+            --navy-900: #071e37;
+            --navy-800: #0a2b4e;
+            --navy-700: #0e3a66;
+            --blue-600: #0b5cad;
+            --blue-500: #1670c9;
+            --blue-100: #dcebf9;
+            --blue-50:  #eef5fc;
+            --ink:      #14243a;
+            --ink-soft: #43536b;
+            --ink-mute: #64748b;
+            --line:     #dde4ec;
+            --paper:    #ffffff;
+            --paper-2:  #f4f7fa;
+            --gold:     #c9a227;
+            --font-sans: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        ::selection { background: var(--blue-100); color: var(--navy-900); }
+
+        section[id] { scroll-margin-top: 84px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .header {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 14px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .header-mark {
+            width: 40px;
+            height: 40px;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy-900);
+            border-radius: 8px;
+            color: #fff;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .header-titles {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .logo-text {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--navy-900);
+            letter-spacing: -0.3px;
+            line-height: 1.25;
+        }
+
+        .logo-text span { color: var(--blue-600); }
+
+        .logo-subtitle {
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            color: var(--ink-mute);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-subtitle a {
+            color: var(--blue-600);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .logo-subtitle a:hover { text-decoration: underline; }
+
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .menu-toggle svg { width: 24px; height: 24px; color: var(--navy-900); }
+
+        .header-nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .header-nav a {
+            color: var(--ink-soft);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .header-nav a:hover { color: var(--blue-600); }
+
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--blue-600);
+            transition: width 0.2s ease;
+        }
+        .header-nav a:hover::after { width: 100%; }
+
+        .header-nav a.current { color: var(--blue-600); }
+        .header-nav a.current::after { width: 100%; }
+
+        .nav-close { display: none; }
+
+        /* CTA-styled nav links (Participation FAQs + Get Involved) */
+        .header-nav a.nav-btn {
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-size: 13.5px;
+        }
+        .header-nav a.nav-btn::after { display: none; }
+        .header-nav a.nav-btn-secondary {
+            color: var(--blue-600);
+            border: 1.5px solid var(--blue-600);
+        }
+        .header-nav a.nav-btn-secondary:hover { background: var(--blue-50); color: var(--blue-600); }
+        .header-nav a.nav-btn-primary {
+            background: var(--navy-900);
+            color: #fff;
+        }
+        .header-nav a.nav-btn-primary:hover { background: var(--blue-600); color: #fff; }
+
+        /* Generic link colors (safety net for any future links) */
+        a { color: var(--blue-600); }
+        a:hover { color: var(--navy-800); }
+
+        /* ============================================================
+           PAGE HERO (compact variant of the homepage hero)
+           ============================================================ */
+        .hero {
+            background:
+                radial-gradient(1100px 520px at 78% -10%, rgba(22,112,201,0.35), transparent 62%),
+                radial-gradient(700px 420px at 12% 110%, rgba(14,58,102,0.55), transparent 60%),
+                linear-gradient(180deg, rgba(4,16,31,0.92) 0%, rgba(7,30,55,0.94) 100%),
+                var(--navy-900);
+            color: #fff;
+            padding: 84px 32px 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 30%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 30%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 880px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.28);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 500;
+            margin-bottom: 28px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.92);
+        }
+        .hero-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex: none;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 54px);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.08;
+            margin-bottom: 18px;
+            text-wrap: balance;
+        }
+
+        .hero p.lede {
+            font-size: 17px;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.8;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* ============================================================
+           SECTIONS
+           ============================================================ */
+        section { padding: 88px 32px; }
+
+        .container { max-width: 1020px; margin: 0 auto; }
+
+        .section-header { margin-bottom: 44px; }
+
+        .section-kicker {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .section-kicker::before {
+            content: '';
+            width: 34px;
+            height: 2px;
+            background: var(--blue-600);
+            flex: none;
+        }
+        .section-kicker span {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--blue-600);
+        }
+
+        .section-title {
+            font-size: clamp(28px, 3.6vw, 38px);
+            font-weight: 800;
+            color: var(--navy-900);
+            letter-spacing: -1px;
+            line-height: 1.15;
+            max-width: 760px;
+            text-wrap: pretty;
+        }
+
+        .section-subtitle {
+            font-size: 16.5px;
+            color: var(--ink-mute);
+            margin-top: 14px;
+            line-height: 1.7;
+            max-width: 640px;
+        }
+
+        .bg-light { background: var(--paper-2); }
+        .bg-white { background: var(--paper); }
+
+        .body-content p {
+            font-size: 16.5px;
+            color: var(--ink-soft);
+            line-height: 1.85;
+            margin-bottom: 20px;
+            max-width: 820px;
+            text-wrap: pretty;
+        }
+        .body-content p:last-child { margin-bottom: 0; }
+
+        .body-content ul {
+            margin: 0 0 24px 0;
+            padding-left: 0;
+            list-style: none;
+            max-width: 820px;
+        }
+
+        .body-content li {
+            font-size: 16.5px;
+            color: var(--ink-soft);
+            line-height: 1.7;
+            margin-bottom: 10px;
+            padding-left: 26px;
+            position: relative;
+        }
+        .body-content li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 11px;
+            width: 8px;
+            height: 8px;
+            border: 2px solid var(--blue-500);
+            border-radius: 2px;
+        }
+
+        .body-content a {
+            color: var(--blue-600);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: var(--blue-100);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s ease;
+        }
+        .body-content a:hover { text-decoration-color: var(--blue-600); }
+
+        .sub-heading {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--navy-900);
+            letter-spacing: -0.4px;
+            margin: 40px 0 14px;
+        }
+        .sub-heading:first-child { margin-top: 0; }
+
+        .highlight-box {
+            background: var(--blue-50);
+            border: 1px solid var(--blue-100);
+            padding: 18px 22px;
+            border-radius: 10px;
+            margin: 26px 0;
+            font-size: 16px;
+            color: var(--navy-900);
+            font-weight: 500;
+            max-width: 820px;
+        }
+        .highlight-box a {
+            color: var(--blue-600);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .highlight-box a:hover { text-decoration: underline; }
+
+        .footnote {
+            font-size: 13px;
+            color: var(--ink-mute);
+            line-height: 1.7;
+            max-width: 820px;
+            border-top: 1px solid var(--line);
+            margin-top: 34px;
+            padding-top: 16px;
+        }
+        .footnote a { color: var(--blue-600); }
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+        .standards-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--navy-900);
+            color: #fff;
+            padding: 15px 34px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .standards-link:hover {
+            background: var(--blue-600);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(11,92,173,0.28);
+        }
+        .body-content a.standards-link,
+        .body-content a.standards-link:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* ============================================================
+           ENGAGE SECTION (dark CTA)
+           ============================================================ */
+        .engage-section {
+            background:
+                radial-gradient(900px 500px at 15% -10%, rgba(22,112,201,0.28), transparent 60%),
+                var(--navy-900);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .engage-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 100%);
+            pointer-events: none;
+        }
+        .engage-section .container { position: relative; z-index: 1; }
+        .engage-content {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .engage-content h2 {
+            font-size: clamp(28px, 3.6vw, 36px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 14px;
+        }
+        .engage-content p.intro {
+            font-size: 16.5px;
+            color: rgba(255,255,255,0.82);
+            margin-bottom: 34px;
+            line-height: 1.75;
+        }
+        .engage-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .engage-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .engage-btn.primary { background: #fff; color: var(--navy-900); }
+        .engage-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+            color: var(--navy-900);
+        }
+        .engage-btn.secondary {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .engage-btn.secondary:hover {
+            background: rgba(255,255,255,0.16);
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .engage-contacts {
+            font-size: 15px;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.9;
+        }
+        .engage-contacts a { color: #7cb8f0; font-weight: 600; text-decoration: none; }
+        .engage-contacts a:hover { color: #a8d0f7; text-decoration: underline; }
+
+        /* ============================================================
+           DOWNLOAD STRIP (compact one-pager download)
+           ============================================================ */
+        .dl-strip-section { padding: 34px 32px; }
+
+        .dl-strip {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 16px 22px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .dl-strip:hover {
+            border-color: var(--blue-600);
+            box-shadow: 0 8px 26px rgba(11,92,173,0.12);
+        }
+        .dl-strip-icon {
+            width: 40px;
+            height: 40px;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy-900);
+            border-radius: 9px;
+        }
+        .dl-strip-icon svg { width: 20px; height: 20px; color: #fff; }
+        .dl-strip-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            min-width: 0;
+        }
+        .dl-strip-text strong {
+            font-size: 15.5px;
+            font-weight: 700;
+            color: var(--navy-900);
+            letter-spacing: -0.2px;
+        }
+        .dl-strip-text span {
+            font-size: 13px;
+            color: var(--ink-mute);
+            line-height: 1.5;
+        }
+        .dl-strip-btn {
+            margin-left: auto;
+            flex: none;
+            color: var(--blue-600);
+            font-size: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .dl-strip:hover .dl-strip-btn { text-decoration: underline; text-underline-offset: 3px; }
+
+        /* ============================================================
+           FORM BITS (used inside the modal)
+           ============================================================ */
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 0.2px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            outline: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            font-family: inherit;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .turnstile-wrapper {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px 24px;
+            background: #fff;
+            color: var(--navy-900);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-family: inherit;
+            letter-spacing: 0.1px;
+        }
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+        }
+        .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+        .form-status {
+            margin-top: 16px;
+            text-align: center;
+            display: none;
+            font-weight: 600;
+        }
+        .form-status.show { display: block; }
+        .form-status.success { color: #4ade80; }
+        .form-status.error { color: #f87171; }
+
+        /* ============================================================
+           MODAL (download gate)
+           ============================================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4,16,31,0.72);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal {
+            background: #fff;
+            color: var(--ink);
+            border-radius: 16px;
+            max-width: 460px;
+            width: 100%;
+            padding: 32px 28px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+            max-height: 92vh;
+            overflow-y: auto;
+        }
+        .modal h3 {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--navy-900);
+            letter-spacing: -0.4px;
+            margin-bottom: 6px;
+        }
+        .modal .modal-sub {
+            font-size: 14px;
+            color: var(--ink-mute);
+            margin-bottom: 22px;
+            line-height: 1.65;
+        }
+        .modal .modal-doc { font-weight: 600; color: var(--blue-600); }
+        .modal .form-group label { color: #374151; }
+        .modal .form-group input {
+            background: #fff;
+            color: var(--ink);
+            border: 1px solid var(--line);
+        }
+        .modal .form-group input::placeholder { color: #9ca3af; }
+        .modal .form-group input:focus { border-color: var(--blue-600); background: #fff; }
+        .modal .submit-btn { background: var(--navy-900); color: #fff; }
+        .modal .submit-btn:hover:not(:disabled) { background: var(--blue-600); }
+        .modal-close {
+            float: right;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--ink-mute);
+            padding: 4px;
+            margin: -8px -4px 0 0;
+        }
+        .modal-close svg { width: 22px; height: 22px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        footer {
+            background: var(--navy-950);
+            color: white;
+            text-align: center;
+            padding: 36px 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        footer p { font-size: 14px; color: rgba(255,255,255,0.65); }
+        footer a {
+            color: #7cb8f0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer a:hover { color: #a8d0f7; text-decoration: underline; }
+        footer .links { margin-top: 12px; }
+        footer .links a { margin: 0 12px; }
+
+        /* ============================================================
+           SCROLL REVEAL (subtle, respects reduced motion)
+           ============================================================ */
+        @media (prefers-reduced-motion: no-preference) {
+            .reveal {
+                opacity: 0;
+                transform: translateY(16px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .reveal.in {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1180px) and (min-width: 769px) {
+            .header-nav { gap: 16px; }
+            .header-nav a { font-size: 13px; }
+            .header-nav a.nav-btn { padding: 8px 13px; font-size: 12.5px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+
+            .header { padding: 12px 16px; }
+
+            .header-nav {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: var(--navy-900);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 0;
+                z-index: 200;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            .header-nav.active { opacity: 1; visibility: visible; }
+            .header-nav a {
+                font-size: 20px;
+                padding: 16px 24px;
+                width: 100%;
+                text-align: center;
+                color: rgba(255,255,255,0.9);
+                font-weight: 600;
+            }
+            .header-nav a:hover { color: #fff; }
+            .header-nav a::after { display: none; }
+
+            .header-nav a.nav-btn {
+                width: auto;
+                min-width: 250px;
+                margin-top: 10px;
+                text-align: center;
+                font-size: 17px;
+                padding: 14px 24px;
+            }
+            .header-nav a.nav-btn-secondary { color: #fff; border-color: rgba(255,255,255,0.6); }
+            .header-nav a.nav-btn-secondary:hover { background: rgba(255,255,255,0.1); color: #fff; }
+            .header-nav a.nav-btn-primary { background: #fff; color: var(--navy-900); }
+            .header-nav a.nav-btn-primary:hover { background: #fff; color: var(--navy-900); }
+            .header-nav a.current { color: #fff; }
+
+            .nav-close {
+                display: block;
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+            }
+            .nav-close svg { width: 28px; height: 28px; color: #fff; }
+
+            .header-mark { width: 36px; height: 36px; font-size: 10px; }
+            .logo-text { font-size: 15px; }
+            .logo-subtitle { font-size: 9.5px; }
+
+            section { padding: 60px 20px; }
+            section[id] { scroll-margin-top: 68px; }
+
+            .hero { padding: 60px 20px 52px; }
+            .hero-badge { font-size: 10px; padding: 6px 14px; letter-spacing: 1px; }
+            .hero h1 { letter-spacing: -1px; }
+            .hero p.lede { font-size: 15.5px; }
+
+            .section-header { margin-bottom: 32px; }
+            .section-subtitle { font-size: 15px; }
+            .sub-heading { font-size: 19px; }
+
+            .body-content p, .body-content li { font-size: 15.5px; }
+            .highlight-box { padding: 15px 18px; font-size: 15px; }
+
+            .standards-link {
+                padding: 13px 24px;
+                font-size: 14px;
+                width: 100%;
+                max-width: 340px;
+                justify-content: center;
+            }
+
+            .engage-buttons { flex-direction: column; align-items: center; }
+            .engage-btn { width: 100%; max-width: 340px; justify-content: center; }
+
+            .dl-strip-section { padding: 26px 20px; }
+            .dl-strip { flex-wrap: wrap; padding: 16px 18px; gap: 14px; }
+            .dl-strip-btn { margin-left: 54px; }
+
+            .form-row { grid-template-columns: 1fr; }
+            .turnstile-wrapper { transform: scale(0.95); transform-origin: center; }
+
+            footer { padding: 28px 16px; }
+            footer p { font-size: 13px; }
+            footer .links a { margin: 0 8px; font-size: 13px; }
+        }
+
+        @media (max-width: 380px) {
+            .section-title { font-size: 24px; }
+            .turnstile-wrapper { transform: scale(0.85); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="header-mark" aria-hidden="true">TC<br>301</div>
+            <div class="header-titles">
+                <div class="logo-text">U.S. TAG to <span>ISO/TC 301</span></div>
+                <div class="logo-subtitle">Accredited by <a href="https://www.ansi.org" target="_blank" rel="noopener">ANSI</a></div>
+            </div>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+        <nav class="header-nav" id="headerNav">
+            <button class="nav-close" onclick="toggleMenu()" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <a href="/#top" onclick="closeMenu()">Home</a>
+            <a href="/#standards" onclick="closeMenu()">Standards</a>
+            <a href="/#role" onclick="closeMenu()">The TAG</a>
+            <a href="/#future" onclick="closeMenu()">Future Work</a>
+            <a href="/#documents" onclick="closeMenu()">Documents</a>
+            <a href="/participate" class="nav-btn nav-btn-secondary current" onclick="closeMenu()">Participation FAQs</a>
+            <a href="/#contact" class="nav-btn nav-btn-primary" onclick="closeMenu()">Get Involved</a>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="hero" id="top">
+        <div class="hero-content">
+            <div class="hero-badge">Participation FAQs</div>
+            <h1>Join the U.S. TAG Developing International Standards for Energy Management</h1>
+            <p class="lede">What participation in the U.S. Technical Advisory Group to ISO/TC 301 looks like, what members do, and how to get engaged.</p>
+        </div>
+    </section>
+
+    <!-- About the TAG -->
+    <section class="bg-white" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-kicker"><span>The Basics</span></div>
+                <h2 class="section-title">What is the TAG?</h2>
+            </div>
+            <div class="body-content reveal">
+                <p>The U.S. TAG is the exclusive channel for U.S. input to the International Standards Organization (ISO) Technical Committee (TC) 301, developing international standards for energy management and methods for calculating energy saving. Members are instrumental in ensuring the TAG&rsquo;s products benefit their users and surrounding communities.</p>
+
+                <h3 class="sub-heading">What&rsquo;s the TAG doing now?</h3>
+                <ul>
+                    <li>We&rsquo;re exploring new areas: demand flexibility and demand response, renewable energy in energy management, and AI and big data in energy measurement.</li>
+                    <li>The ISO 50001 standard on energy management is now open for periodic revision. We&rsquo;ll work on updates including how to incorporate renewable energy.</li>
+                    <li>ISO 50100&mdash;using energy management to manage energy-related emissions&mdash;was just published. We&rsquo;re going to work on certification criteria for it and also for the revised ISO 50001.</li>
+                </ul>
+
+                <h3 class="sub-heading">Who&rsquo;s involved?</h3>
+                <p>We are energy management experts from a range of backgrounds or organizations interested in energy management. Some members participate as individuals; others may be associated with their organization.</p>
+
+                <h3 class="sub-heading">What is asked of TAG members?</h3>
+                <p>Members actively contribute to standards as they are developed. We:</p>
+                <ul>
+                    <li>Help develop overall guidance and its application to specific standards,</li>
+                    <li>Propose specific edits to improve a standard under development, and</li>
+                    <li>Vote whether a standard advances through the standard development process.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Good to know -->
+    <section class="bg-light" id="good-to-know">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-kicker"><span>Good to Know</span></div>
+                <h2 class="section-title">What the TAG Is and Isn&rsquo;t</h2>
+            </div>
+            <div class="body-content reveal">
+                <ul>
+                    <li>The TAG is independent of the U.S. government, though some TAG members also work on federally funded projects,</li>
+                    <li>The TAG follows the procedures of the ISO and the American National Standards Institute (ANSI)<sup>1</sup> ensuring standards qualify for ISO publication,</li>
+                    <li>Neither the TAG nor the ISO advocate specific technologies or policies,</li>
+                    <li>In the U.S., TC 301 standards are used voluntarily; elsewhere governments have implicitly required them.<sup>2</sup></li>
+                </ul>
+
+                <div class="highlight-box">There currently are no fees. To support future international efforts, the TAG is developing a fee structure for 2027; fees may vary by type of individual or organizational participation.</div>
+
+                <h3 class="sub-heading">Other TAGs address other topics and have other administrators</h3>
+                <ul>
+                    <li>An example: quality management standards (ISO 9001) are developed by TC 176 with U.S. input from a TAG administered by the American Society for Quality.</li>
+                </ul>
+
+                <p class="footnote">
+                    1. ANSI is an independent, non-profit organization and is the official representative for the U.S. to the ISO for developing international standards. More at: <a href="https://www.ansi.org/iso/us-representation-in-iso/introduction" target="_blank" rel="noopener">ansi.org/iso/us-representation-in-iso</a>.<br>
+                    2. E.g. the EU&rsquo;s &ldquo;Energy Efficiency Directive&rdquo; implicitly requires ISO 50001 for large energy-using organizations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- One-pager download (compact strip) -->
+    <section class="bg-white dl-strip-section" id="one-pager">
+        <div class="container">
+            <div class="dl-strip reveal" onclick="openDownloadModal('Participation One-Pager', 'us_tag_iso_tc301_participation_one_pager_2026.pdf')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
+                <div class="dl-strip-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <div class="dl-strip-text">
+                    <strong>Participation One-Pager</strong>
+                    <span>A shareable one-page PDF of this information.</span>
+                </div>
+                <span class="dl-strip-btn">Download PDF &darr;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to engage -->
+    <section class="engage-section" id="engage">
+        <div class="container">
+            <div class="engage-content">
+                <h2>Ready to Engage?</h2>
+                <p class="intro">Schedule a call with the team, reach out directly, or send us a note through the contact form.</p>
+                <div class="engage-buttons">
+                    <a class="engage-btn primary" href="https://calendar.app.google/YQMF1a6SwQp9v2XaA" target="_blank" rel="noopener">Schedule a call &rarr;</a>
+                    <a class="engage-btn secondary" href="/#contact">Use the contact form</a>
+                </div>
+                <div class="engage-contacts">
+                    <strong>Contact:</strong><br>
+                    Peter Therkelsen &mdash; <a href="mailto:ptherkelsen@lbl.gov">ptherkelsen@lbl.gov</a><br>
+                    Bill Miller &mdash; <a href="mailto:wcmiller@lbl.gov">wcmiller@lbl.gov</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>U.S. Technical Advisory Group to ISO/TC 301 | Accredited by ANSI</p>
+        <p class="links">
+            <a href="/">Home</a>
+            <a href="https://www.iso.org/committee/6077221.html" target="_blank" rel="noopener">ISO/TC 301</a>
+            <a href="https://www.ansi.org" target="_blank" rel="noopener">ANSI</a>
+        </p>
+    </footer>
+
+    <!-- Download Gate Modal -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="downloadModalTitle">
+            <button class="modal-close" onclick="closeDownloadModal()" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <h3 id="downloadModalTitle">Download document</h3>
+            <p class="modal-sub">You&rsquo;re about to download <span class="modal-doc" id="downloadDocName">the document</span>. Please share a few details first. This is a public document; the form simply helps us understand who is interested.</p>
+            <form id="downloadForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dlFirstName">First Name *</label>
+                        <input type="text" id="dlFirstName" name="firstName" required placeholder="First name">
+                    </div>
+                    <div class="form-group">
+                        <label for="dlLastName">Last Name *</label>
+                        <input type="text" id="dlLastName" name="lastName" required placeholder="Last name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dlOrganization">Organization *</label>
+                    <input type="text" id="dlOrganization" name="organization" required placeholder="Your organization">
+                </div>
+                <div class="form-group">
+                    <label for="dlEmail">Email *</label>
+                    <input type="email" id="dlEmail" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="turnstile-wrapper">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADs_2H9CfykB6VBg" data-callback="onDownloadTurnstile"></div>
+                </div>
+                <button type="submit" class="submit-btn" id="downloadSubmitBtn">Download PDF</button>
+                <div id="downloadStatus" class="form-status"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    /* ============================================================
+       CONFIGURATION (must match index.html)
+       ============================================================ */
+    var APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyMDY5SS-7w0GTNzfqRXYPcY1-YS4pRQ9XMHxtdcl1oh5xgmStB7Xgw9G5I46w7j9MmSQ/exec";
+
+    /* ---------- Mobile menu ---------- */
+    function toggleMenu() {
+        document.getElementById('headerNav').classList.toggle('active');
+    }
+    function closeMenu() {
+        document.getElementById('headerNav').classList.remove('active');
+    }
+
+    /* ---------- Shared helpers ---------- */
+    function collectMetadata() {
+        return {
+            userAgent: navigator.userAgent || '',
+            screenResolution: (screen.width + 'x' + screen.height),
+            referrer: document.referrer || '',
+            ip: '' // IP is added server-side; left blank here.
+        };
+    }
+
+    // Reset a specific Turnstile widget if the API is available.
+    function resetTurnstile() {
+        try {
+            if (window.turnstile && typeof turnstile.reset === 'function') {
+                turnstile.reset();
+            }
+        } catch (e) { /* no-op */ }
+    }
+
+    // Read the Turnstile token from a hidden input rendered inside the given form.
+    function getTurnstileToken(formEl) {
+        var input = formEl.querySelector('[name="cf-turnstile-response"]');
+        return input ? input.value : '';
+    }
+
+    /*
+       POST helper. We send the body as text/plain containing a JSON string.
+       This avoids a CORS preflight (no custom headers / non-simple content type),
+       and Google Apps Script reads it via e.postData.contents and JSON.parse().
+    */
+    function postToBackend(payload) {
+        return fetch(APPS_SCRIPT_WEB_APP_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        }).then(function (res) {
+            return res.json().catch(function () { return { result: 'error', message: 'Invalid server response' }; });
+        });
+    }
+
+    function setStatus(el, type, message) {
+        el.className = 'form-status show ' + type;
+        el.textContent = message;
+    }
+    function clearStatus(el) {
+        el.className = 'form-status';
+        el.textContent = '';
+    }
+
+    /* ============================================================
+       DOWNLOAD GATE MODAL
+       ============================================================ */
+    var pendingDownload = { name: '', path: '' };
+
+    function openDownloadModal(docName, docPath) {
+        pendingDownload = { name: docName, path: docPath };
+        document.getElementById('downloadDocName').textContent = docName;
+        var status = document.getElementById('downloadStatus');
+        clearStatus(status);
+        document.getElementById('downloadForm').reset();
+        document.getElementById('downloadModal').classList.add('open');
+        resetTurnstile();
+    }
+
+    function closeDownloadModal() {
+        document.getElementById('downloadModal').classList.remove('open');
+    }
+
+    // Close modal when clicking the dark overlay (but not the modal box).
+    document.getElementById('downloadModal').addEventListener('click', function (e) {
+        if (e.target === this) closeDownloadModal();
+    });
+
+    function triggerDownload(path) {
+        var a = document.createElement('a');
+        a.href = path;
+        a.setAttribute('download', '');
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    document.getElementById('downloadForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = this;
+        var btn = document.getElementById('downloadSubmitBtn');
+        var status = document.getElementById('downloadStatus');
+        clearStatus(status);
+
+        var firstName = form.firstName.value.trim();
+        var lastName = form.lastName.value.trim();
+        var organization = form.organization.value.trim();
+        var email = form.email.value.trim();
+
+        if (!firstName || !lastName || !organization || !email) {
+            setStatus(status, 'error', 'Please complete all fields.');
+            return;
+        }
+
+        var token = getTurnstileToken(form);
+        if (!token) { setStatus(status, 'error', 'Please complete the verification challenge.'); return; }
+
+        var meta = collectMetadata();
+        var payload = {
+            formType: 'download',
+            document: pendingDownload.name,
+            firstName: firstName,
+            lastName: lastName,
+            organization: organization,
+            email: email,
+            'cf-turnstile-response': token,
+            userAgent: meta.userAgent,
+            screenResolution: meta.screenResolution,
+            referrer: meta.referrer,
+            ip: meta.ip
+        };
+
+        btn.disabled = true;
+        btn.textContent = 'Preparing download...';
+
+        postToBackend(payload).then(function (data) {
+            if (data && data.result === 'success') {
+                setStatus(status, 'success', 'Thank you. Your download is starting.');
+                triggerDownload(pendingDownload.path);
+                setTimeout(closeDownloadModal, 1200);
+            } else {
+                setStatus(status, 'error', (data && data.message) ? data.message : 'There was a problem. Please try again.');
+            }
+        }).catch(function () {
+            setStatus(status, 'error', 'There was a problem. Please try again.');
+        }).finally(function () {
+            btn.disabled = false;
+            btn.textContent = 'Download PDF';
+            resetTurnstile();
+        });
+    });
+
+    /* Turnstile callback (defined globally so the widget can call it) */
+    function onDownloadTurnstile() { /* token is auto-populated into the hidden input */ }
+
+    /* ---------- Subtle scroll reveal (visual only; respects reduced motion) ---------- */
+    (function () {
+        if (!('IntersectionObserver' in window)) {
+            document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+            return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    })();
+    </script>
+</body>
+</html>

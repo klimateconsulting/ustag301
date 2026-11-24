@@ -185,6 +185,24 @@
 
         .nav-close { display: none; }
 
+        /* CTA-styled nav links (Participation FAQs + Get Involved) */
+        .header-nav a.nav-btn {
+            padding: 9px 18px;
+            border-radius: 8px;
+            font-size: 13.5px;
+        }
+        .header-nav a.nav-btn::after { display: none; }
+        .header-nav a.nav-btn-secondary {
+            color: var(--blue-600);
+            border: 1.5px solid var(--blue-600);
+        }
+        .header-nav a.nav-btn-secondary:hover { background: var(--blue-50); color: var(--blue-600); }
+        .header-nav a.nav-btn-primary {
+            background: var(--navy-900);
+            color: #fff;
+        }
+        .header-nav a.nav-btn-primary:hover { background: var(--blue-600); color: #fff; }
+
         /* Generic link colors (safety net for any future links) */
         a { color: var(--blue-600); }
         a:hover { color: var(--navy-800); }
@@ -553,6 +571,8 @@
             text-align: center;
             color: white;
             padding: 76px 24px;
+            flex-direction: column;
+            gap: 28px;
         }
         .image-banner-content h3 {
             font-size: clamp(22px, 3vw, 30px);
@@ -561,6 +581,40 @@
             line-height: 1.35;
             letter-spacing: -0.6px;
             text-wrap: balance;
+        }
+        .banner-buttons {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .banner-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .banner-btn.primary { background: #fff; color: var(--navy-900); }
+        .banner-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+            color: var(--navy-900);
+        }
+        .banner-btn.secondary {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .banner-btn.secondary:hover {
+            background: rgba(255,255,255,0.16);
+            transform: translateY(-2px);
+            color: #fff;
         }
 
         /* ============================================================
@@ -889,6 +943,12 @@
         /* ============================================================
            RESPONSIVE
            ============================================================ */
+        @media (max-width: 1180px) and (min-width: 769px) {
+            .header-nav { gap: 16px; }
+            .header-nav a { font-size: 13px; }
+            .header-nav a.nav-btn { padding: 8px 13px; font-size: 12.5px; }
+        }
+
         @media (max-width: 1024px) {
             .stats-row { grid-template-columns: repeat(3, 1fr); }
         }
@@ -922,6 +982,19 @@
             }
             .header-nav a:hover { color: #fff; }
             .header-nav a::after { display: none; }
+
+            .header-nav a.nav-btn {
+                width: auto;
+                min-width: 250px;
+                margin-top: 10px;
+                text-align: center;
+                font-size: 17px;
+                padding: 14px 24px;
+            }
+            .header-nav a.nav-btn-secondary { color: #fff; border-color: rgba(255,255,255,0.6); }
+            .header-nav a.nav-btn-secondary:hover { background: rgba(255,255,255,0.1); color: #fff; }
+            .header-nav a.nav-btn-primary { background: #fff; color: var(--navy-900); }
+            .header-nav a.nav-btn-primary:hover { background: #fff; color: var(--navy-900); }
 
             .nav-close {
                 display: block;
@@ -970,7 +1043,8 @@
             .links-grid { grid-template-columns: 1fr; gap: 12px; }
             .downloads-grid { grid-template-columns: 1fr; gap: 16px; }
 
-            .image-banner-content { padding: 56px 20px; }
+            .image-banner-content { padding: 56px 20px; gap: 22px; }
+            .banner-btn { width: 100%; max-width: 340px; justify-content: center; padding: 13px 24px; font-size: 14px; }
 
             .contact-form { padding: 26px 20px; }
             .form-row { grid-template-columns: 1fr; }
@@ -1013,7 +1087,8 @@
             <a href="#role" onclick="closeMenu()">The TAG</a>
             <a href="#future" onclick="closeMenu()">Future Work</a>
             <a href="#documents" onclick="closeMenu()">Documents</a>
-            <a href="#contact" onclick="closeMenu()">Get Involved</a>
+            <a href="/participate" class="nav-btn nav-btn-secondary" onclick="closeMenu()">Participation FAQs</a>
+            <a href="#contact" class="nav-btn nav-btn-primary" onclick="closeMenu()">Get Involved</a>
         </nav>
     </header>
 
@@ -1149,6 +1224,10 @@
     <div class="image-banner">
         <div class="image-banner-content">
             <h3>Join Us in Shaping the Future of Energy Management Standards</h3>
+            <div class="banner-buttons">
+                <a class="banner-btn primary" href="/participate">Participation FAQs &rarr;</a>
+                <a class="banner-btn secondary" href="#contact">Get Involved</a>
+            </div>
         </div>
     </div>
 
@@ -1291,7 +1370,7 @@
        Replace APPS_SCRIPT_WEB_APP_URL with the deployed /exec URL.
        Replace TURNSTILE_SITE_KEY (in the data-sitekey attributes above).
        ============================================================ */
-    var APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzD0XW2E7bv4yn2G70X0XSnZnCan-PDE9FNROvlttGG1Q8riVXhFhV5CLpYcR5lR5go/exec";
+    var APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyMDY5SS-7w0GTNzfqRXYPcY1-YS4pRQ9XMHxtdcl1oh5xgmStB7Xgw9G5I46w7j9MmSQ/exec";
 
     /* ---------- Mobile menu ---------- */
     function toggleMenu() {
